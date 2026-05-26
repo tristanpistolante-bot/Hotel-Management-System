@@ -13,6 +13,7 @@ public class BookingWindow extends javax.swing.JFrame {
         lblSelectedRoom.setText(room.getRoomType());
         lblPrice.setText("$" + room.getPricePerNight() + "/night");
         lblGuestName.setText(guest.getFullName());
+        lblAmenities.setText(room.getAmenities());
         
         btnConfirmBooking.setEnabled(false);
     }
@@ -30,6 +31,7 @@ public class BookingWindow extends javax.swing.JFrame {
         btnCancelBooking = new javax.swing.JButton();
         tfNights = new javax.swing.JTextField();
         btnDone = new javax.swing.JButton();
+        lblAmenities = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -64,6 +66,8 @@ public class BookingWindow extends javax.swing.JFrame {
             }
         });
 
+        lblAmenities.setText("AMENITIES");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -79,9 +83,14 @@ public class BookingWindow extends javax.swing.JFrame {
                         .addGap(37, 37, 37)
                         .addComponent(lblNights))
                     .addComponent(lblSelectedRoom))
-                .addGap(18, 21, Short.MAX_VALUE)
-                .addComponent(tfNights, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(83, 83, 83))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(tfNights, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(83, 83, 83))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(lblAmenities)
+                        .addGap(121, 121, 121))))
             .addGroup(layout.createSequentialGroup()
                 .addGap(81, 81, 81)
                 .addComponent(btnConfirmBooking)
@@ -112,7 +121,9 @@ public class BookingWindow extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(lblNights))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(101, 101, 101)
+                        .addGap(33, 33, 33)
+                        .addComponent(lblAmenities)
+                        .addGap(52, 52, 52)
                         .addComponent(tfNights, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addComponent(lblCost)
@@ -171,6 +182,7 @@ public class BookingWindow extends javax.swing.JFrame {
     private javax.swing.JButton btnCancelBooking;
     private javax.swing.JButton btnConfirmBooking;
     private javax.swing.JButton btnDone;
+    private javax.swing.JLabel lblAmenities;
     private javax.swing.JLabel lblCost;
     private javax.swing.JLabel lblGuestName;
     private javax.swing.JLabel lblNights;
