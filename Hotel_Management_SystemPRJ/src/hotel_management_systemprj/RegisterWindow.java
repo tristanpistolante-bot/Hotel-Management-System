@@ -29,6 +29,7 @@ public class RegisterWindow extends javax.swing.JFrame {
         tfEmail = new javax.swing.JTextField();
         pfRegister = new javax.swing.JPasswordField();
         btnBack = new javax.swing.JButton();
+        RegisterIcon_JLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(230, 237, 255));
@@ -45,7 +46,7 @@ public class RegisterWindow extends javax.swing.JFrame {
         jPanel1.add(jLabel2);
         jLabel2.setBounds(70, 100, 210, 50);
 
-        btnRegister.setBackground(new java.awt.Color(51, 51, 255));
+        btnRegister.setBackground(new java.awt.Color(102, 0, 255));
         btnRegister.setForeground(new java.awt.Color(255, 255, 255));
         btnRegister.setText("Register");
         btnRegister.addActionListener(new java.awt.event.ActionListener() {
@@ -71,7 +72,7 @@ public class RegisterWindow extends javax.swing.JFrame {
         jPanel1.add(lblPhoneNumber);
         lblPhoneNumber.setBounds(20, 340, 110, 16);
 
-        tfFullName.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 255), 3));
+        tfFullName.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 0, 255), 3, true));
         jPanel1.add(tfFullName);
         tfFullName.setBounds(20, 220, 310, 40);
 
@@ -80,7 +81,7 @@ public class RegisterWindow extends javax.swing.JFrame {
         jPanel1.add(lblRegisterUsername);
         lblRegisterUsername.setBounds(20, 410, 60, 16);
 
-        tfRegisterUsername.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 255), 3));
+        tfRegisterUsername.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 0, 255), 3, true));
         jPanel1.add(tfRegisterUsername);
         tfRegisterUsername.setBounds(20, 430, 310, 40);
 
@@ -89,19 +90,19 @@ public class RegisterWindow extends javax.swing.JFrame {
         jPanel1.add(lblRegisterPassword);
         lblRegisterPassword.setBounds(20, 480, 60, 16);
 
-        tfPhoneNumber.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 255), 3));
+        tfPhoneNumber.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 0, 255), 3, true));
         jPanel1.add(tfPhoneNumber);
         tfPhoneNumber.setBounds(20, 360, 310, 40);
 
-        tfEmail.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 255), 3));
+        tfEmail.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 0, 255), 3, true));
         jPanel1.add(tfEmail);
         tfEmail.setBounds(20, 290, 310, 40);
 
-        pfRegister.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 255), 3));
+        pfRegister.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 0, 255), 3, true));
         jPanel1.add(pfRegister);
         pfRegister.setBounds(20, 500, 310, 40);
 
-        btnBack.setBackground(new java.awt.Color(51, 51, 255));
+        btnBack.setBackground(new java.awt.Color(102, 0, 255));
         btnBack.setForeground(new java.awt.Color(255, 255, 255));
         btnBack.setText("BACK");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
@@ -111,6 +112,10 @@ public class RegisterWindow extends javax.swing.JFrame {
         });
         jPanel1.add(btnBack);
         btnBack.setBounds(270, 10, 72, 23);
+
+        RegisterIcon_JLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/hotel_resized.png"))); // NOI18N
+        jPanel1.add(RegisterIcon_JLabel);
+        RegisterIcon_JLabel.setBounds(130, 20, 80, 80);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -172,6 +177,7 @@ public class RegisterWindow extends javax.swing.JFrame {
     }//GEN-LAST:event_btnBackActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel RegisterIcon_JLabel;
     private javax.swing.JButton btnBack;
     private javax.swing.JButton btnRegister;
     private javax.swing.JLabel jLabel1;
