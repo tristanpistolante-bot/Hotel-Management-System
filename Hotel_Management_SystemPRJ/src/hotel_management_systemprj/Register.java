@@ -32,7 +32,7 @@ public class Register extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         registerBTN = new javax.swing.JButton();
-        Login = new javax.swing.JButton();
+        LoginBTN = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         FullNameTF = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
@@ -61,9 +61,9 @@ public class Register extends javax.swing.JFrame {
         jPanel1.add(registerBTN);
         registerBTN.setBounds(20, 560, 310, 40);
 
-        Login.setText("jButton2");
-        jPanel1.add(Login);
-        Login.setBounds(200, 140, 130, 30);
+        LoginBTN.setText("Login");
+        jPanel1.add(LoginBTN);
+        LoginBTN.setBounds(200, 140, 130, 30);
 
         jLabel4.setText("jLabel3");
         jPanel1.add(jLabel4);
@@ -161,7 +161,7 @@ public class Register extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField EmailTF;
     private javax.swing.JTextField FullNameTF;
-    private javax.swing.JButton Login;
+    private javax.swing.JButton LoginBTN;
     private javax.swing.JTextField PasswordTF;
     private javax.swing.JTextField PhoneNumberTF;
     private javax.swing.JTextField UserNameTF;
