@@ -162,7 +162,6 @@ public class BookingWindow extends javax.swing.JFrame {
         int nights = Integer.parseInt(tfNights.getText());
         double total = HotelData.getCurrentRoom().calculatePrice(nights);
 
-        lblNights.setText("Nights: " + nights);
         lblCost.setText("Total: $" + total);
         
         btnConfirmBooking.setEnabled(true);

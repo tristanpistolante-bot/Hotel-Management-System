@@ -28,6 +28,7 @@ public class RegisterWindow extends javax.swing.JFrame {
         tfPhoneNumber = new javax.swing.JTextField();
         tfEmail = new javax.swing.JTextField();
         pfRegister = new javax.swing.JPasswordField();
+        btnBack = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -79,6 +80,15 @@ public class RegisterWindow extends javax.swing.JFrame {
         tfEmail.setBounds(20, 290, 310, 40);
         jPanel1.add(pfRegister);
         pfRegister.setBounds(20, 500, 310, 40);
+
+        btnBack.setText("BACK");
+        btnBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBackActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnBack);
+        btnBack.setBounds(270, 10, 72, 23);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -135,7 +145,14 @@ public class RegisterWindow extends javax.swing.JFrame {
         }    
     }//GEN-LAST:event_btnRegisterActionPerformed
 
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
+        // TODO add your handling code here:
+        new WelcomeWindow().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnBackActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnBack;
     private javax.swing.JButton btnRegister;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
