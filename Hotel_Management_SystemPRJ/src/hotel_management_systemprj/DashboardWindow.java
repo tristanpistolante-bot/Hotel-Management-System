@@ -11,7 +11,6 @@ public class DashboardWindow extends javax.swing.JFrame {
         {
             btnViewBill.setEnabled(false);
             btnServices.setEnabled(false);
-            btnCheckOut.setEnabled(false);
         }
         
         if (HotelData.getBooking() != null) 
@@ -27,7 +26,6 @@ public class DashboardWindow extends javax.swing.JFrame {
         btnRoom = new javax.swing.JButton();
         btnServices = new javax.swing.JButton();
         btnViewBill = new javax.swing.JButton();
-        btnCheckOut = new javax.swing.JButton();
         btnLogout = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -40,6 +38,11 @@ public class DashboardWindow extends javax.swing.JFrame {
         });
 
         btnServices.setText("REQUEST SERVICES");
+        btnServices.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnServicesActionPerformed(evt);
+            }
+        });
 
         btnViewBill.setText("VIEW MY BILL");
         btnViewBill.addActionListener(new java.awt.event.ActionListener() {
@@ -47,8 +50,6 @@ public class DashboardWindow extends javax.swing.JFrame {
                 btnViewBillActionPerformed(evt);
             }
         });
-
-        btnCheckOut.setText("CHECK OUT");
 
         btnLogout.setText("LOGOUT");
         btnLogout.addActionListener(new java.awt.event.ActionListener() {
@@ -72,10 +73,7 @@ public class DashboardWindow extends javax.swing.JFrame {
                         .addComponent(btnRoom)
                         .addGap(61, 61, 61)
                         .addComponent(btnServices))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnViewBill)
-                        .addGap(82, 82, 82)
-                        .addComponent(btnCheckOut)))
+                    .addComponent(btnViewBill))
                 .addContainerGap(56, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -88,9 +86,7 @@ public class DashboardWindow extends javax.swing.JFrame {
                     .addComponent(btnRoom)
                     .addComponent(btnServices))
                 .addGap(64, 64, 64)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnViewBill)
-                    .addComponent(btnCheckOut))
+                .addComponent(btnViewBill)
                 .addContainerGap(112, Short.MAX_VALUE))
         );
 
@@ -115,8 +111,13 @@ public class DashboardWindow extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btnViewBillActionPerformed
 
+    private void btnServicesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnServicesActionPerformed
+        // TODO add your handling code here:
+        new RequestServicesWindow().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnServicesActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnCheckOut;
     private javax.swing.JButton btnLogout;
     private javax.swing.JButton btnRoom;
     private javax.swing.JButton btnServices;

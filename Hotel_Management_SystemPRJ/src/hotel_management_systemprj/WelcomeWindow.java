@@ -15,9 +15,11 @@ public class WelcomeWindow extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         btnRegisterOption = new javax.swing.JButton();
         btnLoginOption = new javax.swing.JButton();
+        WelcomeIcon_Jlabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(230, 237, 255));
+        setPreferredSize(new java.awt.Dimension(400, 300));
         getContentPane().setLayout(null);
 
         jPanel1.setLayout(null);
@@ -25,14 +27,14 @@ public class WelcomeWindow extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel2.setText("Welcome to");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(120, 100, 210, 70);
+        jLabel2.setBounds(90, 90, 210, 70);
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel3.setText("Grand Hotel");
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(120, 140, 210, 70);
+        jLabel3.setBounds(90, 130, 210, 70);
 
-        btnRegisterOption.setBackground(new java.awt.Color(51, 51, 255));
+        btnRegisterOption.setBackground(new java.awt.Color(102, 0, 255));
         btnRegisterOption.setForeground(new java.awt.Color(255, 255, 255));
         btnRegisterOption.setText("REGISTER");
         btnRegisterOption.addActionListener(new java.awt.event.ActionListener() {
@@ -41,9 +43,9 @@ public class WelcomeWindow extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnRegisterOption);
-        btnRegisterOption.setBounds(60, 210, 90, 40);
+        btnRegisterOption.setBounds(40, 210, 90, 40);
 
-        btnLoginOption.setBackground(new java.awt.Color(51, 51, 255));
+        btnLoginOption.setBackground(new java.awt.Color(102, 0, 255));
         btnLoginOption.setForeground(new java.awt.Color(255, 255, 255));
         btnLoginOption.setText("LOGIN");
         btnLoginOption.addActionListener(new java.awt.event.ActionListener() {
@@ -52,10 +54,14 @@ public class WelcomeWindow extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnLoginOption);
-        btnLoginOption.setBounds(280, 210, 90, 40);
+        btnLoginOption.setBounds(250, 210, 90, 40);
+
+        WelcomeIcon_Jlabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/hotel_resized.png"))); // NOI18N
+        jPanel1.add(WelcomeIcon_Jlabel);
+        WelcomeIcon_Jlabel.setBounds(150, 20, 80, 80);
 
         getContentPane().add(jPanel1);
-        jPanel1.setBounds(0, 0, 460, 300);
+        jPanel1.setBounds(0, 0, 400, 300);
 
         pack();
         setLocationRelativeTo(null);
@@ -74,6 +80,7 @@ public class WelcomeWindow extends javax.swing.JFrame {
     }//GEN-LAST:event_btnLoginOptionActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel WelcomeIcon_Jlabel;
     private javax.swing.JButton btnLoginOption;
     private javax.swing.JButton btnRegisterOption;
     private javax.swing.JLabel jLabel2;
