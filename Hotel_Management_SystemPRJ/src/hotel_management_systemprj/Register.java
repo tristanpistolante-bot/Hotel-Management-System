@@ -107,7 +107,7 @@ public class Register extends javax.swing.JFrame {
         jPanel1.add(PasswordTF);
         PasswordTF.setBounds(20, 500, 310, 40);
 
-        registerBTN1.setText("Dako");
+        registerBTN1.setText("Register");
         jPanel1.add(registerBTN1);
         registerBTN1.setBounds(20, 140, 130, 30);
 
