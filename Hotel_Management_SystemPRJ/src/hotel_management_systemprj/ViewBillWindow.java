@@ -15,14 +15,15 @@ public class ViewBillWindow extends javax.swing.JFrame {
         double servicesTotal = HotelData.getServicesCost();
         double grandTotal = roomTotal + servicesTotal;
 
-        lblGuestName.setText("Guest: " + guest.getFullName());
-        lblRoom.setText("Room: " + booking.getRoom().getRoomType());
-        lblPricePerNight.setText("Price per Night: $" + booking.getRoom().getPricePerNight());
-        lblNumberOfNights.setText("Number of Nights: " + booking.getNumberOfNights());
-        lblRoomTotal.setText("Room Total: $" + roomTotal);
-        lblServicesTotal.setText("Services Total: $" + servicesTotal);
-        lblTotal.setText("Grand Total: $" + grandTotal);
-        lblFoodCost.setText("Food Cost: $" + foodCost);
+        lblGuestName.setText("GUEST: " + guest.getFullName());
+        lblRoom.setText("ROOM: " + booking.getRoom().getRoomType());
+        lblPricePerNight.setText("PRICE PER NIGHT: $" + booking.getRoom().getPricePerNight());
+        lblNumberOfNights.setText("NUMBER OF NIGHTS: " + booking.getNumberOfNights());
+        lblRoomTotal.setText("ROOM TOTAL: $" + roomTotal);
+        lblServicesTotal.setText("ROOM SERVICES TOTAL: $" + servicesTotal);
+        lblFoodCost.setText("FOOD SERVICES TOTAL: $" + foodCost);
+        lblTotal.setText("GRAND TOTAL: $" + grandTotal);
+
     }
 
 
@@ -69,7 +70,7 @@ public class ViewBillWindow extends javax.swing.JFrame {
 
         lblRoomTotal.setText("ROOM TOTAL");
 
-        lblServicesTotal.setText("SERVICES TOTAL");
+        lblServicesTotal.setText("ROOM SERVICES TOTAL");
 
         lblFoodCost.setText("FOOD TOTAL");
 

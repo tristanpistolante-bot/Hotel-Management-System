@@ -136,7 +136,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lblServicesTotal">
       <Properties>
-        <Property name="text" type="java.lang.String" value="SERVICES TOTAL"/>
+        <Property name="text" type="java.lang.String" value="ROOM SERVICES TOTAL"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lblFoodCost">

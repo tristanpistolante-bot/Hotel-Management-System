@@ -13,6 +13,7 @@ public class DashboardWindow extends javax.swing.JFrame {
         {
             btnViewBill.setEnabled(false);
             btnServices.setEnabled(false);
+            btnFoodServices.setEnabled(false);
         }
         
         if (HotelData.getBooking() != null) 
@@ -31,6 +32,7 @@ public class DashboardWindow extends javax.swing.JFrame {
         btnLogout = new javax.swing.JButton();
         btnServices = new javax.swing.JButton();
         btnViewBill = new javax.swing.JButton();
+        btnFoodServices = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(230, 237, 255));
@@ -70,7 +72,7 @@ public class DashboardWindow extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnServices);
-        btnServices.setBounds(420, 350, 131, 23);
+        btnServices.setBounds(380, 120, 131, 23);
 
         btnViewBill.setText("VIEW MY BILL");
         btnViewBill.addActionListener(new java.awt.event.ActionListener() {
@@ -80,6 +82,15 @@ public class DashboardWindow extends javax.swing.JFrame {
         });
         jPanel1.add(btnViewBill);
         btnViewBill.setBounds(40, 300, 103, 23);
+
+        btnFoodServices.setText("FOOD SERVICES");
+        btnFoodServices.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnFoodServicesActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnFoodServices);
+        btnFoodServices.setBounds(400, 260, 130, 23);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -119,7 +130,14 @@ public class DashboardWindow extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btnServicesActionPerformed
 
+    private void btnFoodServicesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFoodServicesActionPerformed
+        // TODO add your handling code here:
+        new FoodOrderWindow().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnFoodServicesActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnFoodServices;
     private javax.swing.JButton btnLogout;
     private javax.swing.JButton btnRoom;
     private javax.swing.JButton btnServices;
