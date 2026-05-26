@@ -46,7 +46,7 @@
                               <Component id="lblTitle" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace pref="178" max="32767" attributes="0"/>
                       <Component id="btnBack" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -63,7 +63,7 @@
                       <Component id="lblTotal" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="178" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -102,22 +102,22 @@
   <SubComponents>
     <Component class="javax.swing.JCheckBox" name="cbBreakfast">
       <Properties>
-        <Property name="text" type="java.lang.String" value="jCheckBox1"/>
+        <Property name="text" type="java.lang.String" value="BREAKFAST"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JCheckBox" name="cbLunch">
       <Properties>
-        <Property name="text" type="java.lang.String" value="jCheckBox2"/>
+        <Property name="text" type="java.lang.String" value="LUNCH"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JCheckBox" name="cbDinner">
       <Properties>
-        <Property name="text" type="java.lang.String" value="jCheckBox3"/>
+        <Property name="text" type="java.lang.String" value="DINNER"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JCheckBox" name="cbSnacks">
       <Properties>
-        <Property name="text" type="java.lang.String" value="jCheckBox4"/>
+        <Property name="text" type="java.lang.String" value="SNACKS"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lblTotal">
