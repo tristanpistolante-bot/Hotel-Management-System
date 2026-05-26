@@ -8,8 +8,7 @@ public class HotelData
     private static Guest loggedInGuest = null;
     private static Booking currentBooking = null;
     private static Room currentRoom = null;
-    private static double servicesCost = 0.0;
-    private static double foodCost = 0.0;
+
 
     public static boolean registerGuest(Guest guest) 
     {
@@ -49,12 +48,11 @@ public class HotelData
     
     public static void setBooking(Booking booking) 
     { 
-        currentBooking = booking; 
+       loggedInGuest.setBooking(booking); 
     }
-
     public static Booking getBooking() 
     { 
-        return currentBooking; 
+       return loggedInGuest.getBooking(); 
     }
     
     public static void setCurrentRoom(Room room) 
@@ -66,39 +64,39 @@ public class HotelData
     { 
         return currentRoom; 
     }
-    
-
-
+   
     public static void addServiceCost(double cost) 
     { 
-        servicesCost += cost; 
+        loggedInGuest.addServiceCost(cost); 
     }
-
     public static double getServicesCost() 
     { 
-        return servicesCost; 
+        return loggedInGuest.getServicesCost(); 
     }
-
     public static void resetServicesCost() 
     { 
-        servicesCost = 0.0; 
+        loggedInGuest.resetServicesCost(); 
     }
-    
+
     public static void addFoodCost(double cost) 
     { 
-        foodCost += cost; 
+        loggedInGuest.addFoodCost(cost); 
     }
-
     public static double getFoodCost() 
     { 
-        return foodCost; 
+        return loggedInGuest.getFoodCost(); 
     }
-
     public static void resetFoodCost() 
     { 
-        foodCost = 0.0; 
+        loggedInGuest.resetFoodCost(); 
     }
+    
+    public static void logout() 
+    { 
+        loggedInGuest = null;
+        currentRoom = null;
     }
+}
  
     
 
