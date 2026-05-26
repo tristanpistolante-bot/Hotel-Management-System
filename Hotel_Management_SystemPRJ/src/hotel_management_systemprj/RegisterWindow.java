@@ -134,11 +134,10 @@ public class RegisterWindow extends javax.swing.JFrame {
 
     private void btnRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegisterActionPerformed
         // TODO add your handling code here:
-        if (tfFullName.getText().isEmpty() || tfEmail.getText().isEmpty() || 
-        tfPhoneNumber.getText().isEmpty() || tfRegisterUsername.getText().isEmpty() || 
+        if (tfFullName.getText().isEmpty() || tfPhoneNumber.getText().isEmpty() || tfRegisterUsername.getText().isEmpty() || 
         pfRegister.getPassword().length == 0) 
         {
-            javax.swing.JOptionPane.showMessageDialog(this, "PLEASE FILL IN ALL THE FIELDS.");
+            JOptionPane.showMessageDialog(this, "PLEASE FILL IN ALL THE FIELDS.");
             return;
         }
         
@@ -148,17 +147,16 @@ public class RegisterWindow extends javax.swing.JFrame {
         } 
         catch (NumberFormatException e) 
         {
-            javax.swing.JOptionPane.showMessageDialog(this, "INVALID PHONE NUMBER.");
+            JOptionPane.showMessageDialog(this, "INVALID PHONE NUMBER.");
             return;
         }
         
         String FullName = tfFullName.getText();
-        String Email    = tfFullName.getText();
-        String PhoneNumber = tfFullName.getText();
+        String PhoneNumber = tfPhoneNumber.getText();
         String Username = tfRegisterUsername.getText();
         String Password = new String(pfRegister.getPassword());
 
-        Guest newGuest = new Guest(FullName, Email, PhoneNumber, Username, Password);
+        Guest newGuest = new Guest(FullName, PhoneNumber, Username, Password);
         
         if (HotelData.registerGuest(newGuest)) 
         {

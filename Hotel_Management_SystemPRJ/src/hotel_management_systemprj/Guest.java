@@ -4,9 +4,9 @@ public class Guest extends Person {
     private String Username;
     private String Password;
 
-    public Guest(String name, String email, String phoneNumber, String username, String password) 
+    public Guest(String name, String phoneNumber, String username, String password) 
     {
-        super(name, email, phoneNumber);
+        super(name, phoneNumber);
         this.Username = username;
         this.Password = password;
     }
