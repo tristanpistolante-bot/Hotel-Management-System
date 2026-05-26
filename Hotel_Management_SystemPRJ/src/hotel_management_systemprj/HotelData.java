@@ -5,6 +5,9 @@ import java.util.ArrayList;
 public class HotelData 
 {
     private static ArrayList<Guest> guests = new ArrayList<>();
+    private static Guest loggedInGuest = null;
+    private static Booking currentBooking = null;
+    private static Room currentRoom = null;
 
     public static boolean registerGuest(Guest guest) 
     {
@@ -12,7 +15,7 @@ public class HotelData
         {
             if (g.getUsername().equalsIgnoreCase(guest.getUsername())) 
             {
-                return false; // username already taken
+                return false; 
             }
         }
         guests.add(guest);
@@ -25,16 +28,43 @@ public class HotelData
         {
             if (g.getUsername().equalsIgnoreCase(username) && g.getPassword().equals(password)) 
             {
+                loggedInGuest = g;
                 return true;
             }
         }
         return false;
+    }
+    
+    public static Guest getLoggedInGuest() 
+    { 
+        return loggedInGuest; 
     }
 
     public static ArrayList<Guest> getAllGuests() 
     { 
         return guests; 
     }
+    
+    public static void setBooking(Booking booking) 
+    { 
+        currentBooking = booking; 
+    }
+
+    public static Booking getBooking() 
+    { 
+        return currentBooking; 
+    }
+    
+    public static void setCurrentRoom(Room room) 
+    { 
+        currentRoom = room; 
+    }
+
+    public static Room getCurrentRoom() 
+    { 
+        return currentRoom; 
+    }
+    
 }
  
     

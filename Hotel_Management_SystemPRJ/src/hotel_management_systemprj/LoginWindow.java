@@ -19,11 +19,7 @@ public class LoginWindow extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        tfLoginUsername.setText("jTextField1");
-
-        pfLogin.setText("jPasswordField1");
-
-        btnLogin.setText("jButton1");
+        btnLogin.setText("LOGIN");
         btnLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLoginActionPerformed(evt);
@@ -38,13 +34,13 @@ public class LoginWindow extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(69, 69, 69)
-                        .addComponent(tfLoginUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(59, 59, 59)
-                        .addComponent(pfLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(tfLoginUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(26, 26, 26)
+                        .addComponent(pfLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(131, 131, 131)
                         .addComponent(btnLogin)))
-                .addContainerGap(111, Short.MAX_VALUE))
+                .addContainerGap(100, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -68,10 +64,12 @@ public class LoginWindow extends javax.swing.JFrame {
 
         if (HotelData.login(Username, Password)) 
         {
-            JOptionPane.showMessageDialog(this, "Login successful!");
+            JOptionPane.showMessageDialog(this, "LOGIN SUCCESSFUL!");
+            new DashboardWindow().setVisible(true);
+            this.dispose();
         } else 
         {
-            JOptionPane.showMessageDialog(this, "Incorrect username or password.");
+            JOptionPane.showMessageDialog(this, "INCORRECT CREDENTIALS.");
         }
     }//GEN-LAST:event_btnLoginActionPerformed
 

@@ -77,8 +77,6 @@ public class RegisterWindow extends javax.swing.JFrame {
         tfPhoneNumber.setBounds(20, 360, 310, 40);
         jPanel1.add(tfEmail);
         tfEmail.setBounds(20, 290, 310, 40);
-
-        pfRegister.setText("jPasswordField1");
         jPanel1.add(pfRegister);
         pfRegister.setBounds(20, 500, 310, 40);
 
@@ -100,6 +98,24 @@ public class RegisterWindow extends javax.swing.JFrame {
 
     private void btnRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegisterActionPerformed
         // TODO add your handling code here:
+        if (tfFullName.getText().isEmpty() || tfEmail.getText().isEmpty() || 
+        tfPhoneNumber.getText().isEmpty() || tfRegisterUsername.getText().isEmpty() || 
+        pfRegister.getPassword().length == 0) 
+        {
+            javax.swing.JOptionPane.showMessageDialog(this, "PLEASE FILL IN ALL THE FIELDS.");
+            return;
+        }
+        
+        try 
+        {
+            Long.parseLong(tfPhoneNumber.getText());
+        } 
+        catch (NumberFormatException e) 
+        {
+            javax.swing.JOptionPane.showMessageDialog(this, "INVALID PHONE NUMBER.");
+            return;
+        }
+        
         String FullName = tfFullName.getText();
         String Email    = tfFullName.getText();
         String PhoneNumber = tfFullName.getText();
@@ -110,10 +126,12 @@ public class RegisterWindow extends javax.swing.JFrame {
         
         if (HotelData.registerGuest(newGuest)) 
         {
-            JOptionPane.showMessageDialog(this, "Registered successfully!");
+            JOptionPane.showMessageDialog(this, "REGISTERED SUCCESSFULLY!");
+            new WelcomeWindow().setVisible(true);
+            this.dispose();
         } else 
         {
-            JOptionPane.showMessageDialog(this, "Username already taken.");
+            JOptionPane.showMessageDialog(this, "USERNAME ALREADY TAKEN.");
         }    
     }//GEN-LAST:event_btnRegisterActionPerformed
 
