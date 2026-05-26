@@ -12,13 +12,13 @@ public class DashboardWindow extends javax.swing.JFrame {
         if (HotelData.getBooking() == null) 
         {
             btnViewBill.setEnabled(false);
-            btnFoodServices.setEnabled(false);
+            btnServices.setEnabled(false);
             btnFoodServices.setEnabled(false);
         }
         
         if (HotelData.getBooking() != null) 
         {
-            btnFoodServices.setEnabled(false);
+            btnRoom.setEnabled(false);
         }
     }
 
@@ -32,7 +32,7 @@ public class DashboardWindow extends javax.swing.JFrame {
         btnLogout = new javax.swing.JButton();
         btnViewBill = new javax.swing.JButton();
         btnRoom = new javax.swing.JButton();
-        btnServices1 = new javax.swing.JButton();
+        btnServices = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(230, 237, 255));
@@ -43,7 +43,7 @@ public class DashboardWindow extends javax.swing.JFrame {
         lblWelcome.setFont(new java.awt.Font("Segoe UI", 1, 26)); // NOI18N
         lblWelcome.setText("Welcome, !");
         jPanel1.add(lblWelcome);
-        lblWelcome.setBounds(10, 20, 150, 48);
+        lblWelcome.setBounds(10, 20, 250, 48);
 
         btnFoodServices.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnFoodServices.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/utensils.png"))); // NOI18N
@@ -103,20 +103,20 @@ public class DashboardWindow extends javax.swing.JFrame {
         jPanel1.add(btnRoom);
         btnRoom.setBounds(20, 90, 270, 130);
 
-        btnServices1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        btnServices1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/concierge-bell.png"))); // NOI18N
-        btnServices1.setText("<html><body style=\"font-family: Segoe UI; text-align: center;\"><div style=\"font-size: 12px; font-weight: bold;\">REQUEST SERVICES</div><div style=\"font-size: 9px; color: #6B7280;\">Order housekeeping, room service & more</div></body></html>");
-        btnServices1.setActionCommand("<html><center>BOOK A ROOM<br><font size=\"2\" color=\"#6B7280\">Browse and reserve your room</font  color=\"#6B7280\"></center></html>");
-        btnServices1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 0, 255), 3, true));
-        btnServices1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnServices1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        btnServices1.addActionListener(new java.awt.event.ActionListener() {
+        btnServices.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnServices.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/concierge-bell.png"))); // NOI18N
+        btnServices.setText("<html><body style=\"font-family: Segoe UI; text-align: center;\"><div style=\"font-size: 12px; font-weight: bold;\">REQUEST SERVICES</div><div style=\"font-size: 9px; color: #6B7280;\">Order housekeeping, room service & more</div></body></html>");
+        btnServices.setActionCommand("<html><center>BOOK A ROOM<br><font size=\"2\" color=\"#6B7280\">Browse and reserve your room</font  color=\"#6B7280\"></center></html>");
+        btnServices.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 0, 255), 3, true));
+        btnServices.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnServices.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnServices.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnServices1ActionPerformed(evt);
+                btnServicesActionPerformed(evt);
             }
         });
-        jPanel1.add(btnServices1);
-        btnServices1.setBounds(310, 90, 270, 130);
+        jPanel1.add(btnServices);
+        btnServices.setBounds(310, 90, 270, 130);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -158,17 +158,17 @@ public class DashboardWindow extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btnRoomActionPerformed
 
-    private void btnServices1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnServices1ActionPerformed
+    private void btnServicesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnServicesActionPerformed
         // TODO add your handling code here:
         new RequestServicesWindow().setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_btnServices1ActionPerformed
+    }//GEN-LAST:event_btnServicesActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnFoodServices;
     private javax.swing.JButton btnLogout;
     private javax.swing.JButton btnRoom;
-    private javax.swing.JButton btnServices1;
+    private javax.swing.JButton btnServices;
     private javax.swing.JButton btnViewBill;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lblWelcome;
