@@ -28,13 +28,13 @@ public class FoodOrderWindow extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        cbBreakfast.setText("jCheckBox1");
+        cbBreakfast.setText("BREAKFAST");
 
-        cbLunch.setText("jCheckBox2");
+        cbLunch.setText("LUNCH");
 
-        cbDinner.setText("jCheckBox3");
+        cbDinner.setText("DINNER");
 
-        cbSnacks.setText("jCheckBox4");
+        cbSnacks.setText("SNACKS");
 
         lblTotal.setText("TOTAL");
 
@@ -83,7 +83,7 @@ public class FoodOrderWindow extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(16, 16, 16)
                                 .addComponent(lblTitle)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 178, Short.MAX_VALUE)
                         .addComponent(btnBack)))
                 .addGap(18, 18, 18))
             .addGroup(layout.createSequentialGroup()
@@ -94,7 +94,7 @@ public class FoodOrderWindow extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(163, 163, 163)
                         .addComponent(lblTotal)))
-                .addContainerGap(178, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
