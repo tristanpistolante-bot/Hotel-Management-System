@@ -10,6 +10,7 @@ public class Suite extends Room
     @Override
     public double calculatePrice(int nights) 
     {
-        return getPricePerNight() * nights;
+        return getPricePerNight() * nights * 1.20; // 20% service charge
+
     }
 }

@@ -7,6 +7,8 @@ public class DashboardWindow extends javax.swing.JFrame {
     public DashboardWindow() {
         initComponents();
         
+        lblWelcome.setText("Welcome, " + HotelData.getLoggedInGuest().getFullName() + "!");
+        
         if (HotelData.getBooking() == null) 
         {
             btnViewBill.setEnabled(false);
@@ -27,6 +29,7 @@ public class DashboardWindow extends javax.swing.JFrame {
         btnServices = new javax.swing.JButton();
         btnViewBill = new javax.swing.JButton();
         btnLogout = new javax.swing.JButton();
+        lblWelcome = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -58,36 +61,43 @@ public class DashboardWindow extends javax.swing.JFrame {
             }
         });
 
+        lblWelcome.setText("Welcome");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnLogout)
-                .addGap(19, 19, 19))
             .addGroup(layout.createSequentialGroup()
                 .addGap(40, 40, 40)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addComponent(lblWelcome)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnLogout)
+                        .addGap(19, 19, 19))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnViewBill)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
                         .addComponent(btnRoom)
-                        .addGap(61, 61, 61)
-                        .addComponent(btnServices))
-                    .addComponent(btnViewBill))
-                .addContainerGap(56, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 67, Short.MAX_VALUE)
+                        .addComponent(btnServices)
+                        .addGap(50, 50, 50))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(14, 14, 14)
-                .addComponent(btnLogout)
-                .addGap(41, 41, 41)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btnLogout)
+                    .addComponent(lblWelcome))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 97, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnRoom)
                     .addComponent(btnServices))
-                .addGap(64, 64, 64)
+                .addGap(66, 66, 66)
                 .addComponent(btnViewBill)
-                .addContainerGap(112, Short.MAX_VALUE))
+                .addGap(60, 60, 60))
         );
 
         pack();
@@ -122,5 +132,6 @@ public class DashboardWindow extends javax.swing.JFrame {
     private javax.swing.JButton btnRoom;
     private javax.swing.JButton btnServices;
     private javax.swing.JButton btnViewBill;
+    private javax.swing.JLabel lblWelcome;
     // End of variables declaration//GEN-END:variables
 }
