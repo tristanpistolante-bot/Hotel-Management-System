@@ -21,6 +21,7 @@ public class WelcomeWindow extends javax.swing.JFrame {
         setBackground(new java.awt.Color(230, 237, 255));
         getContentPane().setLayout(null);
 
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(null);
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
