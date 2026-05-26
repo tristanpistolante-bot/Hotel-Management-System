@@ -12,13 +12,13 @@ public class DashboardWindow extends javax.swing.JFrame {
         if (HotelData.getBooking() == null) 
         {
             btnViewBill.setEnabled(false);
-            btnServices.setEnabled(false);
+            btnFoodServices.setEnabled(false);
             btnFoodServices.setEnabled(false);
         }
         
         if (HotelData.getBooking() != null) 
         {
-            btnRoom.setEnabled(false);
+            btnFoodServices.setEnabled(false);
         }
     }
 
@@ -28,11 +28,11 @@ public class DashboardWindow extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         lblWelcome = new javax.swing.JLabel();
-        btnRoom = new javax.swing.JButton();
-        btnLogout = new javax.swing.JButton();
-        btnServices = new javax.swing.JButton();
-        btnViewBill = new javax.swing.JButton();
         btnFoodServices = new javax.swing.JButton();
+        btnLogout = new javax.swing.JButton();
+        btnViewBill = new javax.swing.JButton();
+        btnRoom = new javax.swing.JButton();
+        btnServices1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(230, 237, 255));
@@ -43,19 +43,26 @@ public class DashboardWindow extends javax.swing.JFrame {
         lblWelcome.setFont(new java.awt.Font("Segoe UI", 1, 26)); // NOI18N
         lblWelcome.setText("Welcome, !");
         jPanel1.add(lblWelcome);
-        lblWelcome.setBounds(10, 20, 190, 48);
+        lblWelcome.setBounds(10, 20, 150, 48);
 
-        btnRoom.setText("BOOK A ROOM");
-        btnRoom.addActionListener(new java.awt.event.ActionListener() {
+        btnFoodServices.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnFoodServices.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/utensils.png"))); // NOI18N
+        btnFoodServices.setText("<html><body style=\"font-family: Segoe UI; text-align: center;\"><div style=\"font-size: 12px; font-weight: bold;\">CHECK OUT</div><div style=\"font-size: 9px; color: #6B7280;\">Complete payment and check out</div></body></html> ");
+        btnFoodServices.setActionCommand("<html><center>BOOK A ROOM<br><font size=\"2\" color=\"#6B7280\">Browse and reserve your room</font  color=\"#6B7280\"></center></html>");
+        btnFoodServices.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 0, 255), 3, true));
+        btnFoodServices.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnFoodServices.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnFoodServices.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRoomActionPerformed(evt);
+                btnFoodServicesActionPerformed(evt);
             }
         });
-        jPanel1.add(btnRoom);
-        btnRoom.setBounds(20, 110, 112, 23);
+        jPanel1.add(btnFoodServices);
+        btnFoodServices.setBounds(310, 230, 270, 130);
 
         btnLogout.setBackground(new java.awt.Color(102, 0, 255));
         btnLogout.setForeground(new java.awt.Color(255, 255, 255));
+        btnLogout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/log-out.png"))); // NOI18N
         btnLogout.setText("LOGOUT");
         btnLogout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -63,47 +70,67 @@ public class DashboardWindow extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnLogout);
-        btnLogout.setBounds(660, 10, 77, 23);
+        btnLogout.setBounds(480, 30, 110, 30);
 
-        btnServices.setText("REQUEST SERVICES");
-        btnServices.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnServicesActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnServices);
-        btnServices.setBounds(380, 120, 131, 23);
-
-        btnViewBill.setText("VIEW MY BILL");
+        btnViewBill.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnViewBill.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/receipt.png"))); // NOI18N
+        btnViewBill.setText("<html><body style=\"font-family: Segoe UI; text-align: center;\"><div style=\"font-size: 12px; font-weight: bold;\">VIEW MY BILL</div><div style=\"font-size: 9px; color: #6B7280;\">See charges and billing details</div></body></html> ");
+        btnViewBill.setToolTipText("");
+        btnViewBill.setActionCommand("<html><center>BOOK A ROOM<br><font size=\"2\" color=\"#6B7280\">Browse and reserve your room</font  color=\"#6B7280\"></center></html>");
+        btnViewBill.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 0, 255), 3, true));
+        btnViewBill.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnViewBill.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         btnViewBill.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnViewBillActionPerformed(evt);
             }
         });
         jPanel1.add(btnViewBill);
-        btnViewBill.setBounds(40, 300, 103, 23);
+        btnViewBill.setBounds(20, 230, 270, 130);
 
-        btnFoodServices.setText("FOOD SERVICES");
-        btnFoodServices.addActionListener(new java.awt.event.ActionListener() {
+        btnRoom.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnRoom.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/book_room.png"))); // NOI18N
+        btnRoom.setText("<html><body style=\"font-family: Segoe UI; text-align: center;\"><div style=\"font-size: 12px; font-weight: bold;\">BOOK A ROOM</div><div style=\"font-size: 9px; color: #6B7280;\">Browse and reserve your room</div></body></html>");
+        btnRoom.setActionCommand("<html><center>BOOK A ROOM<br><font size=\"2\" color=\"#6B7280\">Browse and reserve your room</font  color=\"#6B7280\"></center></html>");
+        btnRoom.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 0, 255), 3, true));
+        btnRoom.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnRoom.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnRoom.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnFoodServicesActionPerformed(evt);
+                btnRoomActionPerformed(evt);
             }
         });
-        jPanel1.add(btnFoodServices);
-        btnFoodServices.setBounds(400, 260, 130, 23);
+        jPanel1.add(btnRoom);
+        btnRoom.setBounds(20, 90, 270, 130);
+
+        btnServices1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnServices1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/concierge-bell.png"))); // NOI18N
+        btnServices1.setText("<html><body style=\"font-family: Segoe UI; text-align: center;\"><div style=\"font-size: 12px; font-weight: bold;\">REQUEST SERVICES</div><div style=\"font-size: 9px; color: #6B7280;\">Order housekeeping, room service & more</div></body></html>");
+        btnServices1.setActionCommand("<html><center>BOOK A ROOM<br><font size=\"2\" color=\"#6B7280\">Browse and reserve your room</font  color=\"#6B7280\"></center></html>");
+        btnServices1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 0, 255), 3, true));
+        btnServices1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnServices1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnServices1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnServices1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnServices1);
+        btnServices1.setBounds(310, 90, 270, 130);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 744, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 605, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 368, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 391, Short.MAX_VALUE)
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogoutActionPerformed
@@ -112,23 +139,11 @@ public class DashboardWindow extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btnLogoutActionPerformed
 
-    private void btnRoomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRoomActionPerformed
-        // TODO add your handling code here:
-        new BrowseRoomsWindow().setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_btnRoomActionPerformed
-
     private void btnViewBillActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewBillActionPerformed
         // TODO add your handling code here:
         new ViewBillWindow().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnViewBillActionPerformed
-
-    private void btnServicesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnServicesActionPerformed
-        // TODO add your handling code here:
-        new RequestServicesWindow().setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_btnServicesActionPerformed
 
     private void btnFoodServicesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFoodServicesActionPerformed
         // TODO add your handling code here:
@@ -136,11 +151,23 @@ public class DashboardWindow extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btnFoodServicesActionPerformed
 
+    private void btnRoomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRoomActionPerformed
+        // TODO add your handling code here:
+        new BrowseRoomsWindow().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnRoomActionPerformed
+
+    private void btnServices1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnServices1ActionPerformed
+        // TODO add your handling code here:
+        new RequestServicesWindow().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnServices1ActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnFoodServices;
     private javax.swing.JButton btnLogout;
     private javax.swing.JButton btnRoom;
-    private javax.swing.JButton btnServices;
+    private javax.swing.JButton btnServices1;
     private javax.swing.JButton btnViewBill;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lblWelcome;

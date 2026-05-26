@@ -39,7 +39,7 @@ public class LoginWindow extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnBack);
-        btnBack.setBounds(10, 10, 63, 34);
+        btnBack.setBounds(10, 10, 72, 34);
 
         tfLoginUsername.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 0, 255), 3, true));
         tfLoginUsername.addActionListener(new java.awt.event.ActionListener() {
@@ -101,6 +101,7 @@ public class LoginWindow extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
