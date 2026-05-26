@@ -108,8 +108,9 @@ public class DashboardWindow extends javax.swing.JFrame {
 
     private void btnLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogoutActionPerformed
         // TODO add your handling code here:
+        HotelData.logout();
         new WelcomeWindow().setVisible(true);
-        this.dispose();
+        dispose();
     }//GEN-LAST:event_btnLogoutActionPerformed
 
     private void btnRoomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRoomActionPerformed
