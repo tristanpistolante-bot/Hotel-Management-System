@@ -10,18 +10,19 @@ public class ViewBillWindow extends javax.swing.JFrame {
         Booking booking = HotelData.getBooking();
         Guest guest = HotelData.getLoggedInGuest();
 
+        double foodCost = HotelData.getFoodCost();
+        double roomTotal = booking.getRoom().calculatePrice(booking.getNumberOfNights(), foodCost);
+        double servicesTotal = HotelData.getServicesCost();
+        double grandTotal = roomTotal + servicesTotal;
+
         lblGuestName.setText("Guest: " + guest.getFullName());
         lblRoom.setText("Room: " + booking.getRoom().getRoomType());
         lblPricePerNight.setText("Price per Night: $" + booking.getRoom().getPricePerNight());
         lblNumberOfNights.setText("Number of Nights: " + booking.getNumberOfNights());
-
-        double roomTotal = booking.getTotalCost();
-        double servicesTotal = HotelData.getServicesCost();
-        double grandTotal = roomTotal + servicesTotal;
-
         lblRoomTotal.setText("Room Total: $" + roomTotal);
         lblServicesTotal.setText("Services Total: $" + servicesTotal);
         lblTotal.setText("Grand Total: $" + grandTotal);
+        lblFoodCost.setText("Food Cost: $" + foodCost);
     }
 
 
@@ -38,6 +39,7 @@ public class ViewBillWindow extends javax.swing.JFrame {
         btnBack = new javax.swing.JButton();
         lblRoomTotal = new javax.swing.JLabel();
         lblServicesTotal = new javax.swing.JLabel();
+        lblFoodCost = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -69,6 +71,8 @@ public class ViewBillWindow extends javax.swing.JFrame {
 
         lblServicesTotal.setText("SERVICES TOTAL");
 
+        lblFoodCost.setText("FOOD TOTAL");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -93,13 +97,11 @@ public class ViewBillWindow extends javax.swing.JFrame {
                         .addGap(33, 33, 33))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblTotal)
+                            .addComponent(lblFoodCost)
                             .addComponent(lblServicesTotal)
                             .addComponent(lblRoomTotal))
                         .addGap(0, 0, Short.MAX_VALUE))))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblTotal)
-                .addGap(267, 267, 267))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -114,13 +116,15 @@ public class ViewBillWindow extends javax.swing.JFrame {
                     .addComponent(lblPricePerNight))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblNumberOfNights)
-                .addGap(34, 34, 34)
+                .addGap(22, 22, 22)
                 .addComponent(lblRoomTotal)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblServicesTotal)
+                .addGap(8, 8, 8)
+                .addComponent(lblFoodCost)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblTotal)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
                 .addComponent(btnCheckOut)
                 .addGap(34, 34, 34))
         );
@@ -143,6 +147,7 @@ public class ViewBillWindow extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBack;
     private javax.swing.JButton btnCheckOut;
+    private javax.swing.JLabel lblFoodCost;
     private javax.swing.JLabel lblGuestName;
     private javax.swing.JLabel lblNumberOfNights;
     private javax.swing.JLabel lblPricePerNight;
