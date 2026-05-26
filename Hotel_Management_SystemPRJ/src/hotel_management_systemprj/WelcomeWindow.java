@@ -10,47 +10,55 @@ public class WelcomeWindow extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         btnRegisterOption = new javax.swing.JButton();
         btnLoginOption = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(230, 237, 255));
+        getContentPane().setLayout(null);
 
+        jPanel1.setLayout(null);
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        jLabel2.setText("Welcome to");
+        jPanel1.add(jLabel2);
+        jLabel2.setBounds(120, 100, 210, 70);
+
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        jLabel3.setText("Grand Hotel");
+        jPanel1.add(jLabel3);
+        jLabel3.setBounds(120, 140, 210, 70);
+
+        btnRegisterOption.setBackground(new java.awt.Color(51, 51, 255));
+        btnRegisterOption.setForeground(new java.awt.Color(255, 255, 255));
         btnRegisterOption.setText("REGISTER");
         btnRegisterOption.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRegisterOptionActionPerformed(evt);
             }
         });
+        jPanel1.add(btnRegisterOption);
+        btnRegisterOption.setBounds(60, 210, 90, 40);
 
+        btnLoginOption.setBackground(new java.awt.Color(51, 51, 255));
+        btnLoginOption.setForeground(new java.awt.Color(255, 255, 255));
         btnLoginOption.setText("LOGIN");
         btnLoginOption.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLoginOptionActionPerformed(evt);
             }
         });
+        jPanel1.add(btnLoginOption);
+        btnLoginOption.setBounds(280, 210, 90, 40);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(87, 87, 87)
-                .addComponent(btnRegisterOption)
-                .addGap(43, 43, 43)
-                .addComponent(btnLoginOption)
-                .addContainerGap(118, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(151, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnRegisterOption)
-                    .addComponent(btnLoginOption))
-                .addGap(126, 126, 126))
-        );
+        getContentPane().add(jPanel1);
+        jPanel1.setBounds(0, 0, 460, 300);
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRegisterOptionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegisterOptionActionPerformed
@@ -68,5 +76,8 @@ public class WelcomeWindow extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnLoginOption;
     private javax.swing.JButton btnRegisterOption;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
