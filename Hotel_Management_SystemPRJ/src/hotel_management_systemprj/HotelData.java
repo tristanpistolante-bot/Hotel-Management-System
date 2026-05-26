@@ -9,6 +9,7 @@ public class HotelData
     private static Booking currentBooking = null;
     private static Room currentRoom = null;
     private static double servicesCost = 0.0;
+    private static double foodCost = 0.0;
 
     public static boolean registerGuest(Guest guest) 
     {
@@ -83,7 +84,21 @@ public class HotelData
         servicesCost = 0.0; 
     }
     
-}
+    public static void addFoodCost(double cost) 
+    { 
+        foodCost += cost; 
+    }
+
+    public static double getFoodCost() 
+    { 
+        return foodCost; 
+    }
+
+    public static void resetFoodCost() 
+    { 
+        foodCost = 0.0; 
+    }
+    }
  
     
 
