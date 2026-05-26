@@ -25,13 +25,23 @@ public class DashboardWindow extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        lblWelcome = new javax.swing.JLabel();
         btnRoom = new javax.swing.JButton();
+        btnLogout = new javax.swing.JButton();
         btnServices = new javax.swing.JButton();
         btnViewBill = new javax.swing.JButton();
-        btnLogout = new javax.swing.JButton();
-        lblWelcome = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(230, 237, 255));
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setLayout(null);
+
+        lblWelcome.setFont(new java.awt.Font("Segoe UI", 1, 26)); // NOI18N
+        lblWelcome.setText("Welcome, !");
+        jPanel1.add(lblWelcome);
+        lblWelcome.setBounds(10, 20, 190, 48);
 
         btnRoom.setText("BOOK A ROOM");
         btnRoom.addActionListener(new java.awt.event.ActionListener() {
@@ -39,6 +49,19 @@ public class DashboardWindow extends javax.swing.JFrame {
                 btnRoomActionPerformed(evt);
             }
         });
+        jPanel1.add(btnRoom);
+        btnRoom.setBounds(20, 110, 112, 23);
+
+        btnLogout.setBackground(new java.awt.Color(102, 0, 255));
+        btnLogout.setForeground(new java.awt.Color(255, 255, 255));
+        btnLogout.setText("LOGOUT");
+        btnLogout.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLogoutActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnLogout);
+        btnLogout.setBounds(660, 10, 77, 23);
 
         btnServices.setText("REQUEST SERVICES");
         btnServices.addActionListener(new java.awt.event.ActionListener() {
@@ -46,6 +69,8 @@ public class DashboardWindow extends javax.swing.JFrame {
                 btnServicesActionPerformed(evt);
             }
         });
+        jPanel1.add(btnServices);
+        btnServices.setBounds(420, 350, 131, 23);
 
         btnViewBill.setText("VIEW MY BILL");
         btnViewBill.addActionListener(new java.awt.event.ActionListener() {
@@ -53,51 +78,18 @@ public class DashboardWindow extends javax.swing.JFrame {
                 btnViewBillActionPerformed(evt);
             }
         });
-
-        btnLogout.setText("LOGOUT");
-        btnLogout.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnLogoutActionPerformed(evt);
-            }
-        });
-
-        lblWelcome.setText("Welcome");
+        jPanel1.add(btnViewBill);
+        btnViewBill.setBounds(40, 300, 103, 23);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(40, 40, 40)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(lblWelcome)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnLogout)
-                        .addGap(19, 19, 19))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnViewBill)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnRoom)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 67, Short.MAX_VALUE)
-                        .addComponent(btnServices)
-                        .addGap(50, 50, 50))))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 744, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(14, 14, 14)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnLogout)
-                    .addComponent(lblWelcome))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 97, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnRoom)
-                    .addComponent(btnServices))
-                .addGap(66, 66, 66)
-                .addComponent(btnViewBill)
-                .addGap(60, 60, 60))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 368, Short.MAX_VALUE)
         );
 
         pack();
@@ -132,6 +124,7 @@ public class DashboardWindow extends javax.swing.JFrame {
     private javax.swing.JButton btnRoom;
     private javax.swing.JButton btnServices;
     private javax.swing.JButton btnViewBill;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lblWelcome;
     // End of variables declaration//GEN-END:variables
 }
