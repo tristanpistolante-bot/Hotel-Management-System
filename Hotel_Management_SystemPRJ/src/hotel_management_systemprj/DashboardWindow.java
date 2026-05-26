@@ -6,6 +6,18 @@ public class DashboardWindow extends javax.swing.JFrame {
 
     public DashboardWindow() {
         initComponents();
+        
+        if (HotelData.getBooking() == null) 
+        {
+            btnViewBill.setEnabled(false);
+            btnServices.setEnabled(false);
+            btnCheckOut.setEnabled(false);
+        }
+        
+        if (HotelData.getBooking() != null) 
+        {
+            btnRoom.setEnabled(false);
+        }
     }
 
     @SuppressWarnings("unchecked")
@@ -30,6 +42,11 @@ public class DashboardWindow extends javax.swing.JFrame {
         btnServices.setText("REQUEST SERVICES");
 
         btnViewBill.setText("VIEW MY BILL");
+        btnViewBill.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnViewBillActionPerformed(evt);
+            }
+        });
 
         btnCheckOut.setText("CHECK OUT");
 
@@ -91,6 +108,12 @@ public class DashboardWindow extends javax.swing.JFrame {
         new BrowseRoomsWindow().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnRoomActionPerformed
+
+    private void btnViewBillActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewBillActionPerformed
+        // TODO add your handling code here:
+        new ViewBillWindow().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnViewBillActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCheckOut;
