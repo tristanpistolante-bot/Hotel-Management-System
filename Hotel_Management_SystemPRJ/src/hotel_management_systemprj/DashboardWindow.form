@@ -68,7 +68,7 @@
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/images/utensils.png"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="&lt;html&gt;&lt;body style=&quot;font-family: Segoe UI; text-align: center;&quot;&gt;&lt;div style=&quot;font-size: 12px; font-weight: bold;&quot;&gt;CHECK OUT&lt;/div&gt;&lt;div style=&quot;font-size: 9px; color: #6B7280;&quot;&gt;Complete payment and check out&lt;/div&gt;&lt;/body&gt;&lt;/html&gt; "/>
+            <Property name="text" type="java.lang.String" value="&lt;html&gt;&lt;body style=&quot;font-family: Segoe UI; text-align: center;&quot;&gt;&lt;div style=&quot;font-size: 12px; font-weight: bold;&quot;&gt;FOOD SERVICES&lt;/div&gt;&lt;div style=&quot;font-size: 9px; color: #6B7280;&quot;&gt;Order meals and beverages&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;"/>
             <Property name="actionCommand" type="java.lang.String" value="&lt;html&gt;&lt;center&gt;BOOK A ROOM&lt;br&gt;&lt;font size=&quot;2&quot; color=&quot;#6B7280&quot;&gt;Browse and reserve your room&lt;/font  color=&quot;#6B7280&quot;&gt;&lt;/center&gt;&lt;/html&gt;"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">

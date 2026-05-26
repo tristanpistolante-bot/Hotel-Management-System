@@ -47,7 +47,7 @@ public class DashboardWindow extends javax.swing.JFrame {
 
         btnFoodServices.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnFoodServices.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/utensils.png"))); // NOI18N
-        btnFoodServices.setText("<html><body style=\"font-family: Segoe UI; text-align: center;\"><div style=\"font-size: 12px; font-weight: bold;\">CHECK OUT</div><div style=\"font-size: 9px; color: #6B7280;\">Complete payment and check out</div></body></html> ");
+        btnFoodServices.setText("<html><body style=\"font-family: Segoe UI; text-align: center;\"><div style=\"font-size: 12px; font-weight: bold;\">FOOD SERVICES</div><div style=\"font-size: 9px; color: #6B7280;\">Order meals and beverages</div></body></html>");
         btnFoodServices.setActionCommand("<html><center>BOOK A ROOM<br><font size=\"2\" color=\"#6B7280\">Browse and reserve your room</font  color=\"#6B7280\"></center></html>");
         btnFoodServices.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 0, 255), 3, true));
         btnFoodServices.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
