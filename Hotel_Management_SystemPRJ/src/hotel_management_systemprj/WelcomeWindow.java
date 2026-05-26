@@ -44,7 +44,7 @@ public class WelcomeWindow extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnRegisterOption);
-        btnRegisterOption.setBounds(40, 210, 90, 40);
+        btnRegisterOption.setBounds(40, 210, 100, 40);
 
         btnLoginOption.setBackground(new java.awt.Color(102, 0, 255));
         btnLoginOption.setForeground(new java.awt.Color(255, 255, 255));
@@ -55,7 +55,7 @@ public class WelcomeWindow extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnLoginOption);
-        btnLoginOption.setBounds(250, 210, 90, 40);
+        btnLoginOption.setBounds(240, 210, 100, 40);
 
         WelcomeIcon_Jlabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/hotel_resized.png"))); // NOI18N
         jPanel1.add(WelcomeIcon_Jlabel);
