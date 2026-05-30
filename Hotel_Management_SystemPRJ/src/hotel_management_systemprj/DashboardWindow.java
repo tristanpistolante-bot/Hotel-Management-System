@@ -119,6 +119,9 @@ public class DashboardWindow extends javax.swing.JFrame {
         jPanel1.add(btnServices);
         btnServices.setBounds(310, 90, 270, 130);
 
+        btnProfile.setBackground(new java.awt.Color(102, 0, 255));
+        btnProfile.setForeground(new java.awt.Color(255, 255, 255));
+        btnProfile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/circle-user.png"))); // NOI18N
         btnProfile.setText("PROFILE");
         btnProfile.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -126,7 +129,7 @@ public class DashboardWindow extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnProfile);
-        btnProfile.setBounds(380, 30, 74, 23);
+        btnProfile.setBounds(360, 30, 110, 30);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
