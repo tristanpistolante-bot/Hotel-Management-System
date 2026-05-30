@@ -1,13 +1,54 @@
 package hotel_management_systemprj;
 
 import javax.swing.JOptionPane;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 
 public class LoginWindow extends javax.swing.JFrame {
     
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(LoginWindow.class.getName());
-
     public LoginWindow() {
         initComponents();
+    }
+    
+    private boolean loginFromFile(String username, String password) {
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader("src\\hotel_management_systemprj\\users.txt"));
+            String line;
+            while ((line = reader.readLine()) != null) {
+                //this line is for debug if it reads the users from the users.txt and prints put in terminal
+                System.out.println("Read line: " + line); 
+                String[] parts = line.split(" - ");
+                System.out.println();
+                if (parts.length >= 4 && parts[2].trim().equals(username) && parts[3].trim().equals(hashPassword(password))) {
+                    reader.close();
+                    String fullName = parts[0].trim();
+                    String phoneNumber = parts[1].trim();
+                    Guest guest = new Guest(fullName, phoneNumber, username, password);
+                    HotelData.setLoggedInGuest(guest);
+                    return true;
+                }
+            }
+            reader.close();
+        } catch (IOException e) {
+            JOptionPane.showMessageDialog(this, "Error reading user file: " + e.getMessage());
+        }
+        return false;
+    }
+    
+        private String hashPassword(String password) {
+        try {
+            //used md5 for one way hashing to scramble passwords and not easily be accessed
+            java.security.MessageDigest md = java.security.MessageDigest.getInstance("MD5");
+            byte[] hashed = md.digest(password.getBytes());
+            StringBuilder sb = new StringBuilder();
+            for (byte b : hashed) {
+                sb.append(String.format("%02x", b));// this line causes the hashing
+            }
+            return sb.toString();
+        } catch (Exception e) {
+            return password;
+        }
     }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -106,16 +147,19 @@ public class LoginWindow extends javax.swing.JFrame {
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
         // TODO add your handling code here:
-        String Username = tfLoginUsername.getText();
-        String Password = new String(pfLogin.getPassword());
+        String Username = tfLoginUsername.getText().trim();
+        String Password = new String(pfLogin.getPassword()).trim();
 
-        if (HotelData.login(Username, Password)) 
-        {
+        if (Username.isEmpty() || Password.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "PLEASE ENTER USERNAME AND PASSWORD.");
+            return;
+        }
+
+        if (loginFromFile(Username, Password)) {
             JOptionPane.showMessageDialog(this, "LOGIN SUCCESSFUL!");
             new DashboardWindow().setVisible(true);
             this.dispose();
-        } else 
-        {
+        } else {
             JOptionPane.showMessageDialog(this, "INCORRECT CREDENTIALS.");
         }
     }//GEN-LAST:event_btnLoginActionPerformed
