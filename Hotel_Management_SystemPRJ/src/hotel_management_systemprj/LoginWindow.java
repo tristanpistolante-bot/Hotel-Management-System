@@ -79,6 +79,7 @@ public class LoginWindow extends javax.swing.JFrame {
         setBackground(new java.awt.Color(230, 237, 255));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setPreferredSize(new java.awt.Dimension(360, 440));
         jPanel1.setLayout(null);
 
         tfLoginUsername.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 0, 255), 3, true));
@@ -88,11 +89,11 @@ public class LoginWindow extends javax.swing.JFrame {
             }
         });
         jPanel1.add(tfLoginUsername);
-        tfLoginUsername.setBounds(10, 230, 340, 30);
+        tfLoginUsername.setBounds(50, 231, 250, 40);
 
         pfLogin.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 0, 255), 3, true));
         jPanel1.add(pfLogin);
-        pfLogin.setBounds(10, 300, 340, 30);
+        pfLogin.setBounds(50, 300, 250, 40);
 
         btnLogin.setBackground(new java.awt.Color(102, 0, 255));
         btnLogin.setForeground(new java.awt.Color(255, 255, 255));
@@ -103,21 +104,21 @@ public class LoginWindow extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnLogin);
-        btnLogin.setBounds(10, 350, 340, 40);
+        btnLogin.setBounds(50, 370, 250, 40);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel1.setText("Password");
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(10, 280, 60, 16);
+        jLabel1.setBounds(50, 280, 60, 16);
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel2.setText("Username");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(10, 210, 60, 16);
+        jLabel2.setBounds(50, 210, 60, 16);
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/hotel_resized.png"))); // NOI18N
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(140, 30, 80, 70);
+        jLabel3.setBounds(140, 40, 80, 70);
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel4.setText("Sovereign Suites");
@@ -138,17 +139,17 @@ public class LoginWindow extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnRegisterOption1);
-        btnRegisterOption1.setBounds(10, 400, 340, 40);
+        btnRegisterOption1.setBounds(50, 420, 250, 40);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 452, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 500, Short.MAX_VALUE)
         );
 
         pack();

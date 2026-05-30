@@ -84,12 +84,12 @@ public class RegisterWindow extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         jLabel1.setText("Your Luxury Experience Awaits");
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(90, 150, 180, 20);
+        jLabel1.setBounds(90, 160, 180, 20);
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel2.setText("Sovereign Suites");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(30, 100, 290, 50);
+        jLabel2.setBounds(40, 110, 290, 50);
 
         btnRegister.setBackground(new java.awt.Color(102, 0, 255));
         btnRegister.setForeground(new java.awt.Color(255, 255, 255));
@@ -100,43 +100,43 @@ public class RegisterWindow extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnRegister);
-        btnRegister.setBounds(20, 480, 310, 40);
+        btnRegister.setBounds(50, 490, 250, 40);
 
         lblFullName.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         lblFullName.setText("Full Name:");
         jPanel1.add(lblFullName);
-        lblFullName.setBounds(20, 200, 60, 16);
+        lblFullName.setBounds(50, 200, 60, 16);
 
         lblPhoneNumber.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         lblPhoneNumber.setText("Phone Number:");
         jPanel1.add(lblPhoneNumber);
-        lblPhoneNumber.setBounds(20, 270, 110, 16);
+        lblPhoneNumber.setBounds(50, 270, 110, 16);
 
         tfFullName.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 0, 255), 3, true));
         jPanel1.add(tfFullName);
-        tfFullName.setBounds(20, 220, 310, 40);
+        tfFullName.setBounds(50, 220, 250, 40);
 
         lblRegisterUsername.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         lblRegisterUsername.setText("Username:");
         jPanel1.add(lblRegisterUsername);
-        lblRegisterUsername.setBounds(20, 340, 60, 16);
+        lblRegisterUsername.setBounds(50, 340, 60, 16);
 
         tfRegisterUsername.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 0, 255), 3, true));
         jPanel1.add(tfRegisterUsername);
-        tfRegisterUsername.setBounds(20, 360, 310, 40);
+        tfRegisterUsername.setBounds(50, 360, 250, 40);
 
         lblRegisterPassword.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         lblRegisterPassword.setText("Password:");
         jPanel1.add(lblRegisterPassword);
-        lblRegisterPassword.setBounds(20, 410, 60, 16);
+        lblRegisterPassword.setBounds(50, 410, 60, 16);
 
         tfPhoneNumber.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 0, 255), 3, true));
         jPanel1.add(tfPhoneNumber);
-        tfPhoneNumber.setBounds(20, 290, 310, 40);
+        tfPhoneNumber.setBounds(50, 290, 250, 40);
 
         pfRegister.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 0, 255), 3, true));
         jPanel1.add(pfRegister);
-        pfRegister.setBounds(20, 430, 310, 40);
+        pfRegister.setBounds(50, 430, 250, 40);
 
         btnBack.setBackground(new java.awt.Color(102, 0, 255));
         btnBack.setForeground(new java.awt.Color(255, 255, 255));
@@ -147,21 +147,23 @@ public class RegisterWindow extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnBack);
-        btnBack.setBounds(260, 10, 72, 23);
+        btnBack.setBounds(270, 20, 72, 23);
 
         RegisterIcon_JLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/hotel_resized.png"))); // NOI18N
         jPanel1.add(RegisterIcon_JLabel);
-        RegisterIcon_JLabel.setBounds(130, 20, 80, 80);
+        RegisterIcon_JLabel.setBounds(140, 40, 80, 70);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 348, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 359, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 525, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 544, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
