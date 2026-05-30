@@ -30,6 +30,10 @@ public class RequestServicesWindow extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
 
         jScrollPane1.setViewportView(jEditorPane1);
 
@@ -39,14 +43,17 @@ public class RequestServicesWindow extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(null);
 
+        cbHouseKeeping.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         cbHouseKeeping.setText("HOUSE KEEPING");
         jPanel1.add(cbHouseKeeping);
-        cbHouseKeeping.setBounds(10, 180, 110, 20);
+        cbHouseKeeping.setBounds(10, 160, 130, 20);
 
+        cbRoomService.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         cbRoomService.setText("ROOM SERVICE");
         jPanel1.add(cbRoomService);
-        cbRoomService.setBounds(10, 210, 105, 20);
+        cbRoomService.setBounds(10, 210, 120, 20);
 
+        cbBeddingsTowels.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         cbBeddingsTowels.setText("EXTRA BEDDINGS/TOWELS");
         cbBeddingsTowels.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -54,16 +61,18 @@ public class RequestServicesWindow extends javax.swing.JFrame {
             }
         });
         jPanel1.add(cbBeddingsTowels);
-        cbBeddingsTowels.setBounds(10, 140, 180, 20);
+        cbBeddingsTowels.setBounds(10, 110, 180, 20);
 
+        cbLaundry.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         cbLaundry.setText("LAUNDRY");
         jPanel1.add(cbLaundry);
-        cbLaundry.setBounds(10, 250, 76, 20);
+        cbLaundry.setBounds(10, 260, 90, 20);
 
         lblTotal.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lblTotal.setText("RUNNING TOTAL");
+        lblTotal.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 0, 255), 2, true));
         jPanel1.add(lblTotal);
-        lblTotal.setBounds(10, 340, 120, 20);
+        lblTotal.setBounds(10, 340, 340, 40);
 
         btnSubmit.setBackground(new java.awt.Color(102, 0, 255));
         btnSubmit.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -77,23 +86,27 @@ public class RequestServicesWindow extends javax.swing.JFrame {
         jPanel1.add(btnSubmit);
         btnSubmit.setBounds(10, 400, 140, 23);
 
+        btnDone.setForeground(new java.awt.Color(102, 0, 255));
         btnDone.setText("DONE");
+        btnDone.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(102, 0, 255)));
         btnDone.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDoneActionPerformed(evt);
             }
         });
         jPanel1.add(btnDone);
-        btnDone.setBounds(190, 400, 72, 23);
+        btnDone.setBounds(190, 400, 70, 20);
 
+        btnBack.setForeground(new java.awt.Color(102, 0, 255));
         btnBack.setText("BACK");
+        btnBack.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(102, 0, 255)));
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBackActionPerformed(evt);
             }
         });
         jPanel1.add(btnBack);
-        btnBack.setBounds(280, 400, 72, 23);
+        btnBack.setBounds(280, 400, 70, 20);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(102, 0, 255));
@@ -104,12 +117,32 @@ public class RequestServicesWindow extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(102, 0, 255));
         jLabel2.setText("Select the services you would like to request");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(10, 50, 240, 16);
+        jLabel2.setBounds(10, 50, 260, 16);
 
         jLabel3.setForeground(new java.awt.Color(102, 0, 255));
         jLabel3.setText("_______________________________________________________________________");
         jPanel1.add(jLabel3);
         jLabel3.setBounds(10, 60, 350, 16);
+
+        jLabel4.setForeground(new java.awt.Color(102, 0, 255));
+        jLabel4.setText("jLabel4");
+        jPanel1.add(jLabel4);
+        jLabel4.setBounds(270, 260, 60, 16);
+
+        jLabel5.setForeground(new java.awt.Color(102, 0, 255));
+        jLabel5.setText("jLabel4");
+        jPanel1.add(jLabel5);
+        jLabel5.setBounds(270, 110, 60, 16);
+
+        jLabel6.setForeground(new java.awt.Color(102, 0, 255));
+        jLabel6.setText("jLabel4");
+        jPanel1.add(jLabel6);
+        jLabel6.setBounds(270, 160, 60, 16);
+
+        jLabel7.setForeground(new java.awt.Color(102, 0, 255));
+        jLabel7.setText("jLabel4");
+        jPanel1.add(jLabel7);
+        jLabel7.setBounds(270, 210, 60, 16);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -180,6 +213,10 @@ public class RequestServicesWindow extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblTotal;
