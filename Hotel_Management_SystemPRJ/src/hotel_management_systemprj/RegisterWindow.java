@@ -92,6 +92,7 @@ public class RegisterWindow extends javax.swing.JFrame {
         jLabel2.setBounds(40, 110, 290, 50);
 
         btnRegister.setBackground(new java.awt.Color(102, 0, 255));
+        btnRegister.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnRegister.setForeground(new java.awt.Color(255, 255, 255));
         btnRegister.setText("Register");
         btnRegister.addActionListener(new java.awt.event.ActionListener() {
@@ -139,6 +140,7 @@ public class RegisterWindow extends javax.swing.JFrame {
         pfRegister.setBounds(50, 430, 250, 40);
 
         btnBack.setBackground(new java.awt.Color(102, 0, 255));
+        btnBack.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnBack.setForeground(new java.awt.Color(255, 255, 255));
         btnBack.setText("BACK");
         btnBack.addActionListener(new java.awt.event.ActionListener() {

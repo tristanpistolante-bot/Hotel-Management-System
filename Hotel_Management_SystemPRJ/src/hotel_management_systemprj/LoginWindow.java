@@ -96,6 +96,7 @@ public class LoginWindow extends javax.swing.JFrame {
         pfLogin.setBounds(50, 300, 250, 40);
 
         btnLogin.setBackground(new java.awt.Color(102, 0, 255));
+        btnLogin.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnLogin.setForeground(new java.awt.Color(255, 255, 255));
         btnLogin.setText("LOGIN");
         btnLogin.addActionListener(new java.awt.event.ActionListener() {
@@ -131,6 +132,7 @@ public class LoginWindow extends javax.swing.JFrame {
         jLabel5.setBounds(90, 160, 180, 20);
 
         btnRegisterOption1.setBackground(new java.awt.Color(102, 0, 255));
+        btnRegisterOption1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnRegisterOption1.setForeground(new java.awt.Color(255, 255, 255));
         btnRegisterOption1.setText("REGISTER");
         btnRegisterOption1.addActionListener(new java.awt.event.ActionListener() {

@@ -64,6 +64,7 @@ public class DashboardWindow extends javax.swing.JFrame {
         btnFoodServices.setBounds(310, 230, 270, 130);
 
         btnLogout.setBackground(new java.awt.Color(102, 0, 255));
+        btnLogout.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnLogout.setForeground(new java.awt.Color(255, 255, 255));
         btnLogout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/log-out.png"))); // NOI18N
         btnLogout.setText("LOGOUT");
@@ -122,6 +123,7 @@ public class DashboardWindow extends javax.swing.JFrame {
         btnServices.setBounds(310, 90, 270, 130);
 
         btnProfile.setBackground(new java.awt.Color(102, 0, 255));
+        btnProfile.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnProfile.setForeground(new java.awt.Color(255, 255, 255));
         btnProfile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/circle-user.png"))); // NOI18N
         btnProfile.setText("PROFILE");
