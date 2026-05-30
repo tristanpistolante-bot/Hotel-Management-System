@@ -91,6 +91,9 @@ public class HotelData
         loggedInGuest.resetFoodCost(); 
     }
     
+    public static void setLoggedInGuest(Guest guest) { //added this function for the queries using file handling
+        loggedInGuest = guest;
+    }
     public static void logout() 
     { 
         loggedInGuest = null;

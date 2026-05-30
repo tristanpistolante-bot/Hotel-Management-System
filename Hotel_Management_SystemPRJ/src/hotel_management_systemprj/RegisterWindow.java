@@ -1,15 +1,61 @@
 package hotel_management_systemprj;
 
 import javax.swing.JOptionPane;
+import java.io.BufferedWriter;
+import java.io.BufferedReader;
+import java.io.FileWriter;
+import java.io.FileReader;
+import java.io.IOException;
 
 public class RegisterWindow extends javax.swing.JFrame {
     
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(RegisterWindow.class.getName());
-
     public RegisterWindow() {
         initComponents();
     }
 
+    private void saveRegistry(String fullName, String phoneNumber, String username, String password) {
+        try {
+            BufferedWriter writer = new BufferedWriter(new FileWriter("src\\hotel_management_systemprj\\users.txt", true));
+            writer.append(String.format("%s - %s - %s - %s", fullName, phoneNumber, username, hashPassword(password)));
+            writer.newLine();
+            writer.close();
+            System.out.println("Registry save successful");
+        } catch (IOException e) {
+            JOptionPane.showMessageDialog(this, "Error saving registry: " + e.getMessage());
+        }
+    }
+
+    private boolean isUsernameTaken(String username) {
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader("src\\hotel_management_systemprj\\users.txt"));
+            String line;
+            while ((line = reader.readLine()) != null) {
+                String[] parts = line.split(" - ");
+                if (parts.length >= 3 && parts[2].trim().equalsIgnoreCase(username)) {
+                    reader.close();
+                    return true;
+                }
+            }
+            reader.close();
+        } catch (IOException e) {
+            System.out.println(e);
+        }
+        return false;
+    }
+    
+        private String hashPassword(String password) {
+        try {
+            java.security.MessageDigest md = java.security.MessageDigest.getInstance("MD5");
+            byte[] hashed = md.digest(password.getBytes());
+            StringBuilder sb = new StringBuilder();
+            for (byte b : hashed) {
+                sb.append(String.format("%02x", b));
+            }
+            return sb.toString();
+        } catch (Exception e) {
+            return password;
+        }
+    }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -135,39 +181,33 @@ public class RegisterWindow extends javax.swing.JFrame {
 
     private void btnRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegisterActionPerformed
         // TODO add your handling code here:
-        if (tfFullName.getText().isEmpty() || tfPhoneNumber.getText().isEmpty() || tfRegisterUsername.getText().isEmpty() || 
-        pfRegister.getPassword().length == 0) 
-        {
+        if (tfFullName.getText().isEmpty() || tfPhoneNumber.getText().isEmpty() || 
+            tfRegisterUsername.getText().isEmpty() || pfRegister.getPassword().length == 0) {
             JOptionPane.showMessageDialog(this, "PLEASE FILL IN ALL THE FIELDS.");
             return;
         }
-        
-        try 
-        {
+
+        try {
             Long.parseLong(tfPhoneNumber.getText());
-        } 
-        catch (NumberFormatException e) 
-        {
+        } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(this, "INVALID PHONE NUMBER.");
             return;
         }
-        
+
         String FullName = tfFullName.getText();
         String PhoneNumber = tfPhoneNumber.getText();
         String Username = tfRegisterUsername.getText();
         String Password = new String(pfRegister.getPassword());
 
-        Guest newGuest = new Guest(FullName, PhoneNumber, Username, Password);
-        
-        if (HotelData.registerGuest(newGuest)) 
-        {
-            JOptionPane.showMessageDialog(this, "REGISTERED SUCCESSFULLY!");
-            new WelcomeWindow().setVisible(true);
-            this.dispose();
-        } else 
-        {
+        if (isUsernameTaken(Username)) {
             JOptionPane.showMessageDialog(this, "USERNAME ALREADY TAKEN.");
-        }    
+            return;
+        }
+
+        saveRegistry(FullName, PhoneNumber, Username, Password);
+        JOptionPane.showMessageDialog(this, "REGISTERED SUCCESSFULLY!");
+        new WelcomeWindow().setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btnRegisterActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
