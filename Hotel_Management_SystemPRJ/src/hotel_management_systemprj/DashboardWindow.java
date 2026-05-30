@@ -1,5 +1,7 @@
 package hotel_management_systemprj;
 
+import javax.swing.JOptionPane;
+
 public class DashboardWindow extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(DashboardWindow.class.getName());
@@ -148,6 +150,20 @@ public class DashboardWindow extends javax.swing.JFrame {
 
     private void btnLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogoutActionPerformed
         // TODO add your handling code here:
+        if (JOptionPane.showConfirmDialog(
+                this,
+                "Are you sure you want to logout?",
+                "Logout",
+                JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
+
+            HotelData.logout();
+
+            JOptionPane.showMessageDialog(this, "Account logged out successfully!");
+
+            new LoginWindow().setVisible(true);
+            dispose();
+        }
+        
         HotelData.logout();
         new LoginWindow().setVisible(true);
         dispose();
