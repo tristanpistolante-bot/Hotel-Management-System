@@ -8,9 +8,7 @@ public class DashboardWindow extends javax.swing.JFrame {
 
     public DashboardWindow() {
         initComponents();
-        
-        lblWelcome.setText("Welcome, " + HotelData.getLoggedInGuest().getFullName() + "!");
-        
+             
         if (HotelData.getBooking() == null) 
         {
             btnViewBill.setEnabled(false);
@@ -43,10 +41,11 @@ public class DashboardWindow extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(null);
 
-        lblWelcome.setFont(new java.awt.Font("Segoe UI", 1, 26)); // NOI18N
-        lblWelcome.setText("Welcome, !");
+        lblWelcome.setFont(new java.awt.Font("Monospaced", 1, 24)); // NOI18N
+        lblWelcome.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblWelcome.setText("WELCOME TO SOVEREIGN SUITES");
         jPanel1.add(lblWelcome);
-        lblWelcome.setBounds(10, 20, 250, 48);
+        lblWelcome.setBounds(100, -10, 400, 60);
 
         btnFoodServices.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnFoodServices.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/utensils.png"))); // NOI18N
@@ -74,7 +73,7 @@ public class DashboardWindow extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnLogout);
-        btnLogout.setBounds(480, 30, 110, 30);
+        btnLogout.setBounds(470, 50, 110, 30);
 
         btnViewBill.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnViewBill.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/receipt.png"))); // NOI18N
@@ -133,7 +132,7 @@ public class DashboardWindow extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnProfile);
-        btnProfile.setBounds(360, 30, 110, 30);
+        btnProfile.setBounds(20, 50, 110, 30);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -165,10 +164,6 @@ public class DashboardWindow extends javax.swing.JFrame {
             new LoginWindow().setVisible(true);
             dispose();
         }
-        
-        HotelData.logout();
-        new LoginWindow().setVisible(true);
-        dispose();
     }//GEN-LAST:event_btnLogoutActionPerformed
 
     private void btnViewBillActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewBillActionPerformed
