@@ -33,6 +33,7 @@ public class DashboardWindow extends javax.swing.JFrame {
         btnViewBill = new javax.swing.JButton();
         btnRoom = new javax.swing.JButton();
         btnServices = new javax.swing.JButton();
+        btnProfile = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(230, 237, 255));
@@ -118,6 +119,15 @@ public class DashboardWindow extends javax.swing.JFrame {
         jPanel1.add(btnServices);
         btnServices.setBounds(310, 90, 270, 130);
 
+        btnProfile.setText("PROFILE");
+        btnProfile.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnProfileActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnProfile);
+        btnProfile.setBounds(380, 30, 74, 23);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -164,9 +174,16 @@ public class DashboardWindow extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btnServicesActionPerformed
 
+    private void btnProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProfileActionPerformed
+        // TODO add your handling code here:
+        new GuestProfileWindow().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnProfileActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnFoodServices;
     private javax.swing.JButton btnLogout;
+    private javax.swing.JButton btnProfile;
     private javax.swing.JButton btnRoom;
     private javax.swing.JButton btnServices;
     private javax.swing.JButton btnViewBill;
