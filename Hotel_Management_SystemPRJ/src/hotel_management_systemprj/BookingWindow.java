@@ -1,5 +1,11 @@
 package hotel_management_systemprj;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
 public class BookingWindow extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(BookingWindow.class.getName());
@@ -17,6 +23,21 @@ public class BookingWindow extends javax.swing.JFrame {
         
         btnConfirmBooking.setEnabled(false);
     }
+     private void saveToLogbook(String action) {
+            try {
+                //get the current time and current date and format it
+                String dateTime = LocalDateTime.now().format(DateTimeFormatter.ofPattern("MM/dd/yyyy HH:mm:ss"));
+                //opens the logbook.txt, using append mode it will not overwrite the existing entries and it is using list
+                BufferedWriter writer = new BufferedWriter(new FileWriter("src\\hotel_management_systemprj\\logbook.txt", true));
+                //writes the currTime and currDate to logbook.txt
+                writer.append(dateTime + " - " + action);
+                writer.newLine();
+                writer.close();
+                System.out.println("Logbook save successful");
+            } catch (IOException e) {
+                System.out.println(e);
+            }
+        }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -142,9 +163,13 @@ public class BookingWindow extends javax.swing.JFrame {
         Guest guest = HotelData.getLoggedInGuest();
         Room room = HotelData.getCurrentRoom();
         int nights = Integer.parseInt(tfNights.getText());
+        double total = room.calculatePrice(nights);
 
         Booking newBooking = new Booking(guest, room, nights);
         HotelData.setBooking(newBooking);
+
+        saveToLogbook(String.format("%s - %s - %d nights - $%.2f", 
+            guest.getFullName(), room.getRoomType(), nights, total));
 
         javax.swing.JOptionPane.showMessageDialog(this, "Booking confirmed!");
         new DashboardWindow().setVisible(true);
