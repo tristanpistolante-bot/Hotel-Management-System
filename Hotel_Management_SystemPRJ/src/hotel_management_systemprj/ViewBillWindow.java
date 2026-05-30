@@ -15,7 +15,6 @@ public class ViewBillWindow extends javax.swing.JFrame {
         double servicesTotal = HotelData.getServicesCost();
         double grandTotal = roomTotal + servicesTotal;
 
-        lblGuestName.setText("GUEST: " + guest.getFullName());
         lblRoom.setText("ROOM: " + booking.getRoom().getRoomType());
         lblPricePerNight.setText("PRICE PER NIGHT: $" + booking.getRoom().getPricePerNight());
         lblNumberOfNights.setText("NUMBER OF NIGHTS: " + booking.getNumberOfNights());
@@ -31,7 +30,6 @@ public class ViewBillWindow extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        lblGuestName = new javax.swing.JLabel();
         lblRoom = new javax.swing.JLabel();
         lblPricePerNight = new javax.swing.JLabel();
         lblNumberOfNights = new javax.swing.JLabel();
@@ -43,8 +41,6 @@ public class ViewBillWindow extends javax.swing.JFrame {
         lblFoodCost = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        lblGuestName.setText("GUEST NAME");
 
         lblRoom.setText("ROOM");
 
@@ -88,8 +84,7 @@ public class ViewBillWindow extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblNumberOfNights)
-                            .addComponent(lblRoom)
-                            .addComponent(lblGuestName))
+                            .addComponent(lblRoom))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(lblPricePerNight)
@@ -107,9 +102,7 @@ public class ViewBillWindow extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addComponent(lblGuestName)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(47, 47, 47)
                 .addComponent(lblRoom)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -149,7 +142,6 @@ public class ViewBillWindow extends javax.swing.JFrame {
     private javax.swing.JButton btnBack;
     private javax.swing.JButton btnCheckOut;
     private javax.swing.JLabel lblFoodCost;
-    private javax.swing.JLabel lblGuestName;
     private javax.swing.JLabel lblNumberOfNights;
     private javax.swing.JLabel lblPricePerNight;
     private javax.swing.JLabel lblRoom;
