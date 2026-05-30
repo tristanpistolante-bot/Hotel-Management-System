@@ -151,7 +151,7 @@ public class CheckOutWindow extends javax.swing.JFrame {
             HotelData.setBooking(null);
             HotelData.resetServicesCost();
             javax.swing.JOptionPane.showMessageDialog(this, "Thank you for staying with us!");
-            new WelcomeWindow().setVisible(true);
+            new LoginWindow().setVisible(true);
             this.dispose();
         }
     }//GEN-LAST:event_btnCheckOutActionPerformed

@@ -54,8 +54,8 @@ public class LoginWindow extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        btnRegisterOption = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
-        btnBack = new javax.swing.JButton();
         tfLoginUsername = new javax.swing.JTextField();
         pfLogin = new javax.swing.JPasswordField();
         btnLogin = new javax.swing.JButton();
@@ -64,23 +64,22 @@ public class LoginWindow extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        btnRegisterOption1 = new javax.swing.JButton();
+
+        btnRegisterOption.setBackground(new java.awt.Color(102, 0, 255));
+        btnRegisterOption.setForeground(new java.awt.Color(255, 255, 255));
+        btnRegisterOption.setText("REGISTER");
+        btnRegisterOption.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegisterOptionActionPerformed(evt);
+            }
+        });
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(230, 237, 255));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(null);
-
-        btnBack.setBackground(new java.awt.Color(102, 0, 255));
-        btnBack.setForeground(new java.awt.Color(255, 255, 255));
-        btnBack.setText("BACK");
-        btnBack.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBackActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnBack);
-        btnBack.setBounds(10, 10, 72, 34);
 
         tfLoginUsername.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 0, 255), 3, true));
         tfLoginUsername.addActionListener(new java.awt.event.ActionListener() {
@@ -121,14 +120,25 @@ public class LoginWindow extends javax.swing.JFrame {
         jLabel3.setBounds(140, 30, 80, 70);
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
-        jLabel4.setText("Grand Hotel");
+        jLabel4.setText("Sovereign Suites");
         jPanel1.add(jLabel4);
-        jLabel4.setBounds(80, 110, 210, 40);
+        jLabel4.setBounds(40, 110, 280, 50);
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         jLabel5.setText("Your Luxury Experience Awaits");
         jPanel1.add(jLabel5);
-        jLabel5.setBounds(100, 150, 170, 20);
+        jLabel5.setBounds(90, 160, 180, 20);
+
+        btnRegisterOption1.setBackground(new java.awt.Color(102, 0, 255));
+        btnRegisterOption1.setForeground(new java.awt.Color(255, 255, 255));
+        btnRegisterOption1.setText("REGISTER");
+        btnRegisterOption1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegisterOption1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnRegisterOption1);
+        btnRegisterOption1.setBounds(10, 400, 340, 40);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -138,7 +148,7 @@ public class LoginWindow extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 422, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 452, Short.MAX_VALUE)
         );
 
         pack();
@@ -164,19 +174,26 @@ public class LoginWindow extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnLoginActionPerformed
 
-    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
-        // TODO add your handling code here:
-        new WelcomeWindow().setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_btnBackActionPerformed
-
     private void tfLoginUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfLoginUsernameActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_tfLoginUsernameActionPerformed
 
+    private void btnRegisterOptionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegisterOptionActionPerformed
+        // TODO add your handling code here:
+        new RegisterWindow().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnRegisterOptionActionPerformed
+
+    private void btnRegisterOption1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegisterOption1ActionPerformed
+        // TODO add your handling code here:
+        new RegisterWindow().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnRegisterOption1ActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnBack;
     private javax.swing.JButton btnLogin;
+    private javax.swing.JButton btnRegisterOption;
+    private javax.swing.JButton btnRegisterOption1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

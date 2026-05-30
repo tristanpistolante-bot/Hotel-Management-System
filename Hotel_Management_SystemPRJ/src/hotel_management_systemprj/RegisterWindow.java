@@ -206,13 +206,13 @@ public class RegisterWindow extends javax.swing.JFrame {
 
         saveRegistry(FullName, PhoneNumber, Username, Password);
         JOptionPane.showMessageDialog(this, "REGISTERED SUCCESSFULLY!");
-        new WelcomeWindow().setVisible(true);
+        new LoginWindow().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnRegisterActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         // TODO add your handling code here:
-        new WelcomeWindow().setVisible(true);
+        new LoginWindow().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnBackActionPerformed
 
