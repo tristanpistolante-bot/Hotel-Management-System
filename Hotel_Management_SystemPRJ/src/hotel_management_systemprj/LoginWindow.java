@@ -54,7 +54,6 @@ public class LoginWindow extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        btnRegisterOption = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         tfLoginUsername = new javax.swing.JTextField();
         pfLogin = new javax.swing.JPasswordField();
@@ -65,15 +64,6 @@ public class LoginWindow extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         btnRegisterOption1 = new javax.swing.JButton();
-
-        btnRegisterOption.setBackground(new java.awt.Color(102, 0, 255));
-        btnRegisterOption.setForeground(new java.awt.Color(255, 255, 255));
-        btnRegisterOption.setText("REGISTER");
-        btnRegisterOption.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRegisterOptionActionPerformed(evt);
-            }
-        });
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(230, 237, 255));
@@ -181,12 +171,6 @@ public class LoginWindow extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_tfLoginUsernameActionPerformed
 
-    private void btnRegisterOptionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegisterOptionActionPerformed
-        // TODO add your handling code here:
-        new RegisterWindow().setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_btnRegisterOptionActionPerformed
-
     private void btnRegisterOption1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegisterOption1ActionPerformed
         // TODO add your handling code here:
         new RegisterWindow().setVisible(true);
@@ -195,7 +179,6 @@ public class LoginWindow extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnLogin;
-    private javax.swing.JButton btnRegisterOption;
     private javax.swing.JButton btnRegisterOption1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
