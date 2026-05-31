@@ -19,8 +19,19 @@ public class CheckOutWindow extends javax.swing.JFrame {
         double servicesTotal = HotelData.getServicesCost();
         double grandTotal = roomTotal + servicesTotal;
 
-        lblTotal.setText("Grand Total: $" + grandTotal);
-    }
+        lblTotal.setText("Grand Total: $" + String.format("%.2f", grandTotal));
+        
+        String checkIn = getCheckInDateTime();
+        lblCheckIn.setText(checkIn);
+
+        // Check-out is current date and time
+        String checkOut = java.time.LocalDateTime.now().format(
+            java.time.format.DateTimeFormatter.ofPattern("MM/dd/yyyy HH:mm:ss"));
+        lblCheckOut.setText(checkOut);
+
+        int nights = HotelData.getLoggedInGuest().getBooking().getNumberOfNights();
+        lblNumberOfNights.setText(String.valueOf(nights));
+            }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -34,15 +45,14 @@ public class CheckOutWindow extends javax.swing.JFrame {
         lblTotal = new javax.swing.JLabel();
         btnCheckOut = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
+        lblNumberOfNights = new javax.swing.JLabel();
+        lblCheckIn = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
+        lblCheckOut = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -69,7 +79,7 @@ public class CheckOutWindow extends javax.swing.JFrame {
             }
         });
         jPanel1.add(rbCredit);
-        rbCredit.setBounds(20, 310, 110, 21);
+        rbCredit.setBounds(20, 310, 100, 21);
 
         rbDebit.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         rbDebit.setText("DEBIT CARD");
@@ -89,7 +99,7 @@ public class CheckOutWindow extends javax.swing.JFrame {
             }
         });
         jPanel1.add(rbCash);
-        rbCash.setBounds(20, 370, 54, 21);
+        rbCash.setBounds(20, 370, 100, 21);
 
         lblTotal.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         lblTotal.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -114,12 +124,7 @@ public class CheckOutWindow extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(102, 0, 255));
         jLabel1.setText("CHECK OUT");
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(10, 20, 120, 27);
-
-        jLabel2.setForeground(new java.awt.Color(102, 0, 255));
-        jLabel2.setText("Complete you checkout");
-        jPanel1.add(jLabel2);
-        jLabel2.setBounds(10, 50, 150, 16);
+        jLabel1.setBounds(10, 30, 120, 27);
 
         jLabel3.setForeground(new java.awt.Color(102, 0, 255));
         jLabel3.setText("____________________________________________________________________");
@@ -144,13 +149,13 @@ public class CheckOutWindow extends javax.swing.JFrame {
         jPanel1.add(jLabel7);
         jLabel7.setBounds(10, 150, 60, 16);
 
-        jLabel5.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 0, 255), 2, true));
-        jPanel1.add(jLabel5);
-        jLabel5.setBounds(10, 110, 330, 30);
+        lblNumberOfNights.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 0, 255), 2, true));
+        jPanel1.add(lblNumberOfNights);
+        lblNumberOfNights.setBounds(10, 110, 330, 30);
 
-        jLabel8.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 0, 255), 2, true));
-        jPanel1.add(jLabel8);
-        jLabel8.setBounds(10, 170, 330, 30);
+        lblCheckIn.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 0, 255), 2, true));
+        jPanel1.add(lblCheckIn);
+        lblCheckIn.setBounds(10, 170, 330, 30);
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(102, 0, 255));
@@ -158,9 +163,9 @@ public class CheckOutWindow extends javax.swing.JFrame {
         jPanel1.add(jLabel9);
         jLabel9.setBounds(10, 210, 70, 16);
 
-        jLabel10.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 0, 255), 2, true));
-        jPanel1.add(jLabel10);
-        jLabel10.setBounds(10, 230, 330, 30);
+        lblCheckOut.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 0, 255), 2, true));
+        jPanel1.add(lblCheckOut);
+        lblCheckOut.setBounds(10, 230, 330, 30);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -213,20 +218,37 @@ public class CheckOutWindow extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnCheckOutActionPerformed
 
+    private String getCheckInDateTime() {
+    String result = "N/A";
+    try {
+        java.io.BufferedReader reader = new java.io.BufferedReader(new java.io.FileReader("src\\hotel_management_systemprj\\logbook.txt"));
+        String line;
+        String fullName = HotelData.getLoggedInGuest().getFullName();
+        while ((line = reader.readLine()) != null) {
+            if (line.contains(fullName)) {
+                result = line.split(" - ")[0].trim();
+            }
+        }
+        reader.close();
+    } catch (java.io.IOException e) {
+        System.out.println("Error reading logbook: " + e.getMessage());
+    }
+    return result;
+}
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBack;
     private javax.swing.JButton btnCheckOut;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel lblCheckIn;
+    private javax.swing.JLabel lblCheckOut;
+    private javax.swing.JLabel lblNumberOfNights;
     private javax.swing.JLabel lblTotal;
     private javax.swing.JRadioButton rbCash;
     private javax.swing.JRadioButton rbCredit;

@@ -94,19 +94,19 @@ public class FoodOrderWindow extends javax.swing.JFrame {
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(102, 0, 255));
-        jLabel3.setText("110");
+        jLabel3.setText("$15");
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(102, 0, 255));
-        jLabel4.setText("189");
+        jLabel4.setText("$20");
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(102, 0, 255));
-        jLabel5.setText("215");
+        jLabel5.setText("$25");
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(102, 0, 255));
-        jLabel6.setText("80");
+        jLabel6.setText("$10");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);

@@ -56,8 +56,8 @@ public class BookingWindow extends javax.swing.JFrame {
         btnCancelBooking = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(230, 237, 255));
@@ -110,13 +110,12 @@ public class BookingWindow extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnDone);
-        btnDone.setBounds(120, 430, 80, 30);
+        btnDone.setBounds(130, 430, 80, 30);
 
         lblCost.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         lblCost.setForeground(new java.awt.Color(102, 0, 255));
-        lblCost.setText("TOTAL ESTIMATED COST");
         jPanel1.add(lblCost);
-        lblCost.setBounds(100, 490, 150, 30);
+        lblCost.setBounds(120, 500, 100, 20);
 
         btnConfirmBooking.setBackground(new java.awt.Color(102, 0, 255));
         btnConfirmBooking.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -140,7 +139,7 @@ public class BookingWindow extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnCancelBooking);
-        btnCancelBooking.setBounds(170, 550, 90, 30);
+        btnCancelBooking.setBounds(180, 550, 90, 30);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(102, 0, 255));
@@ -154,17 +153,17 @@ public class BookingWindow extends javax.swing.JFrame {
         jPanel1.add(jLabel2);
         jLabel2.setBounds(10, 110, 100, 16);
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(102, 0, 255));
-        jLabel3.setText("AMENITIES");
-        jPanel1.add(jLabel3);
-        jLabel3.setBounds(10, 190, 90, 16);
-
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(102, 0, 255));
         jLabel4.setText("PRICE");
         jPanel1.add(jLabel4);
         jLabel4.setBounds(10, 266, 90, 20);
+
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(102, 0, 255));
+        jLabel5.setText("AMENITIES");
+        jPanel1.add(jLabel5);
+        jLabel5.setBounds(10, 190, 90, 16);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -216,7 +215,7 @@ public class BookingWindow extends javax.swing.JFrame {
         int nights = Integer.parseInt(tfNights.getText());
         double total = HotelData.getCurrentRoom().calculatePrice(nights);
 
-        lblCost.setText("Total: $" + String.format("%.2f", total));
+        lblCost.setText("TOTAL: $" + String.format("%.2f", total));
         
         btnConfirmBooking.setEnabled(true);
     }//GEN-LAST:event_btnDoneActionPerformed
@@ -231,8 +230,8 @@ public class BookingWindow extends javax.swing.JFrame {
     private javax.swing.JButton btnDone;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lblAmenities;
     private javax.swing.JLabel lblCost;
