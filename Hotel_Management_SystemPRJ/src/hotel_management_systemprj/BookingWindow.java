@@ -23,21 +23,23 @@ public class BookingWindow extends javax.swing.JFrame {
         
         btnConfirmBooking.setEnabled(false);
     }
-     private void saveToLogbook(String action) {
-            try {
-                //get the current time and current date and format it
-                String dateTime = LocalDateTime.now().format(DateTimeFormatter.ofPattern("MM/dd/yyyy HH:mm:ss"));
-                //opens the logbook.txt, using append mode it will not overwrite the existing entries and it is using list
-                BufferedWriter writer = new BufferedWriter(new FileWriter("src\\hotel_management_systemprj\\logbook.txt", true));
-                //writes the currTime and currDate to logbook.txt
-                writer.append(dateTime + " - " + action);
-                writer.newLine();
-                writer.close();
-                System.out.println("Logbook save successful");
-            } catch (IOException e) {
-                System.out.println(e);
-            }
+    private void saveToLogbook(String action) {
+        try {
+            // Get current date and time as check-in time and format it
+            String checkIn = LocalDateTime.now().format(DateTimeFormatter.ofPattern("MM/dd/yyyy HH:mm:ss"));
+            // Store check-in time in HotelData so checkout can retrieve it
+            HotelData.setCheckInTime(checkIn);
+            // Opens logbook.txt in append mode so existing entries are not overwritten
+            BufferedWriter writer = new BufferedWriter(new FileWriter("src\\hotel_management_systemprj\\logbook.txt", true));
+            // Writes the check-in time and action to logbook.txt
+            writer.append(checkIn + " - " + action);
+            writer.newLine();
+            writer.close();
+            System.out.println("Logbook save successful");
+        } catch (IOException e) {
+            System.out.println(e);
         }
+    }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents

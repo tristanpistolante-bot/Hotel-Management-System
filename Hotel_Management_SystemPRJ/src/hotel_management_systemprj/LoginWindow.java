@@ -16,7 +16,7 @@ public class LoginWindow extends javax.swing.JFrame {
             BufferedReader reader = new BufferedReader(new FileReader("src\\hotel_management_systemprj\\users.txt"));
             String line;
             while ((line = reader.readLine()) != null) {
-                //this line is for debug if it reads the users from the users.txt and prints put in terminal
+                //for debug can remove if its working
                 System.out.println("Read line: " + line); 
                 String[] parts = line.split(" - ");
                 System.out.println();

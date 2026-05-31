@@ -1,5 +1,11 @@
 package hotel_management_systemprj;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
 public class CheckOutWindow extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(CheckOutWindow.class.getName());
@@ -7,19 +13,41 @@ public class CheckOutWindow extends javax.swing.JFrame {
 
     public CheckOutWindow() {
         initComponents();
-        
+
         btnCheckOut.setEnabled(false);
-        
+
         javax.swing.ButtonGroup paymentGroup = new javax.swing.ButtonGroup();
         paymentGroup.add(rbCash);
         paymentGroup.add(rbCredit);
         paymentGroup.add(rbDebit);
-        
-        double roomTotal = HotelData.getBooking().getTotalCost();
+
+        double foodCost = HotelData.getFoodCost();
+        double roomTotal = HotelData.getBooking().getRoom().calculatePrice(HotelData.getBooking().getNumberOfNights(), foodCost);
         double servicesTotal = HotelData.getServicesCost();
         double grandTotal = roomTotal + servicesTotal;
 
-        lblTotal.setText("Grand Total: $" + grandTotal);
+        lblTotal.setText("Grand Total: $" + String.format("%.2f", grandTotal));
+    }
+
+    private void saveToCheckout(String checkout) {
+        try {
+            // for debug can remove if its working
+            System.out.println("saveToCheckout called with: " + checkout);
+            // Retrieve check-in time from HotelData
+            String checkIn = HotelData.getCheckInTime();
+            // Get current date and time as check-out time
+            String checkOut = LocalDateTime.now().format(DateTimeFormatter.ofPattern("MM/dd/yyyy HH:mm:ss"));
+            // Opens checkout.txt in append mode so existing entries are not overwritten
+            BufferedWriter writer = new BufferedWriter(new FileWriter("src\\hotel_management_systemprj\\checkout.txt", true));
+            // Writes check-in, check-out time and checkout details to checkout.txt
+            writer.append(String.format("Check-in: %s - Check-out: %s - %s", checkIn, checkOut, checkout));
+            writer.newLine();
+            writer.close();
+            System.out.println("Checkout save successful");
+            } catch (Exception e) {
+                System.out.println("ERROR: " + e.getMessage());
+                e.printStackTrace();
+            }
     }
 
     @SuppressWarnings("unchecked")
@@ -145,14 +173,30 @@ public class CheckOutWindow extends javax.swing.JFrame {
     private void btnCheckOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCheckOutActionPerformed
         // TODO add your handling code here:
         int confirm = javax.swing.JOptionPane.showConfirmDialog(this, "Are you sure you want to check out?", "Check Out", javax.swing.JOptionPane.YES_NO_OPTION);
+        if (confirm == javax.swing.JOptionPane.YES_OPTION) {
+            try {
+                Guest guest = HotelData.getLoggedInGuest();
+                Booking booking = HotelData.getBooking();
+                double foodCost = HotelData.getFoodCost();
+                double roomTotal = booking.getRoom().calculatePrice(booking.getNumberOfNights(), foodCost);
+                double servicesTotal = HotelData.getServicesCost();
+                double grandTotal = roomTotal + servicesTotal;
+                String paymentMethod = rbCash.isSelected() ? "Cash" : rbCredit.isSelected() ? "Credit Card" : "Debit Card";
 
-        if (confirm == javax.swing.JOptionPane.YES_OPTION) 
-        {
-            HotelData.setBooking(null);
-            HotelData.resetServicesCost();
-            javax.swing.JOptionPane.showMessageDialog(this, "Thank you for staying with us!");
-            new LoginWindow().setVisible(true);
-            this.dispose();
+                saveToCheckout(String.format("%s - %s - %d nights - Room: $%.2f - Services: $%.2f - Grand Total: $%.2f - %s",
+                    guest.getFullName(), booking.getRoom().getRoomType(), booking.getNumberOfNights(),
+                    roomTotal, servicesTotal, grandTotal, paymentMethod));
+
+                javax.swing.JOptionPane.showMessageDialog(this, "Thank You for choosing Sovereign Suites!\nPlease come again!");
+                HotelData.setBooking(null);
+                HotelData.resetServicesCost();
+                HotelData.resetFoodCost();
+                new LoginWindow().setVisible(true);
+                this.dispose();
+            } catch (Exception e) {
+                System.out.println("ERROR: " + e.getMessage());
+                e.printStackTrace();
+            }
         }
     }//GEN-LAST:event_btnCheckOutActionPerformed
 

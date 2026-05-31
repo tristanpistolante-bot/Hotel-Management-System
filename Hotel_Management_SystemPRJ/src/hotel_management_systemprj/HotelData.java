@@ -94,6 +94,17 @@ public class HotelData
     public static void setLoggedInGuest(Guest guest) { //added this function for the queries using file handling
         loggedInGuest = guest;
     }
+    
+    private static String checkInTime = null; //add this data for checkInTime
+
+    public static void setCheckInTime(String time) { //setter
+        checkInTime = time; 
+    }
+
+    public static String getCheckInTime() { //getters
+        return checkInTime; 
+    }
+    
     public static void logout() 
     { 
         loggedInGuest = null;
