@@ -13,13 +13,6 @@ public class GuestProfileWindow extends javax.swing.JFrame {
 
     Guest guest = HotelData.getLoggedInGuest();
 
-    if (guest == null) {
-        javax.swing.JOptionPane.showMessageDialog(this,
-                "No guest is logged in.");
-        dispose();
-        return;
-    }
-
     tfFullName.setText(guest.getFullName());
     tfPhoneNumber.setText(guest.getPhoneNumber());
     tfUsername.setText(guest.getUsername());
