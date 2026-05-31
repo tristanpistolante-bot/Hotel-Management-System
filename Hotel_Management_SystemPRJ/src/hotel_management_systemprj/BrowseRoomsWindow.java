@@ -102,7 +102,7 @@ public class BrowseRoomsWindow extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(102, 0, 255));
         jLabel3.setText("Select your preffered room");
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(10, 50, 150, 16);
+        jLabel3.setBounds(10, 50, 500, 16);
 
         jLabel4.setForeground(new java.awt.Color(102, 0, 255));
         jLabel4.setText("________________________________________________________________________________________________________________________________________________");
@@ -150,6 +150,7 @@ public class BrowseRoomsWindow extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
