@@ -2,7 +2,6 @@ package hotel_management_systemprj;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
-import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
@@ -48,6 +47,35 @@ public class CheckOutWindow extends javax.swing.JFrame {
                 System.out.println("ERROR: " + e.getMessage());
                 e.printStackTrace();
             }
+    }
+    
+    private void Checkout() {
+        int confirm = javax.swing.JOptionPane.showConfirmDialog(this, "Are you sure you want to check out?", "Check Out", javax.swing.JOptionPane.YES_NO_OPTION);
+        if (confirm == javax.swing.JOptionPane.YES_OPTION) {
+            try {
+                Guest guest = HotelData.getLoggedInGuest();
+                Booking booking = HotelData.getBooking();
+                double foodCost = HotelData.getFoodCost();
+                double roomTotal = booking.getRoom().calculatePrice(booking.getNumberOfNights(), foodCost);
+                double servicesTotal = HotelData.getServicesCost();
+                double grandTotal = roomTotal + servicesTotal;
+                String paymentMethod = rbCash.isSelected() ? "Cash" : rbCredit.isSelected() ? "Credit Card" : "Debit Card";
+
+                saveToCheckout(String.format("%s - %s - %d nights - Room: $%.2f - Services: $%.2f - Grand Total: $%.2f - %s",
+                    guest.getFullName(), booking.getRoom().getRoomType(), booking.getNumberOfNights(),
+                    roomTotal, servicesTotal, grandTotal, paymentMethod));
+
+                javax.swing.JOptionPane.showMessageDialog(this, "Thank You for choosing Sovereign Suites!\nPlease come again!");
+                HotelData.setBooking(null);
+                HotelData.resetServicesCost();
+                HotelData.resetFoodCost();
+                new LoginWindow().setVisible(true);
+                this.dispose();
+            } catch (Exception e) {
+                System.out.println("ERROR: " + e.getMessage());
+                e.printStackTrace();
+            }
+        }
     }
 
     @SuppressWarnings("unchecked")
@@ -172,32 +200,7 @@ public class CheckOutWindow extends javax.swing.JFrame {
 
     private void btnCheckOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCheckOutActionPerformed
         // TODO add your handling code here:
-        int confirm = javax.swing.JOptionPane.showConfirmDialog(this, "Are you sure you want to check out?", "Check Out", javax.swing.JOptionPane.YES_NO_OPTION);
-        if (confirm == javax.swing.JOptionPane.YES_OPTION) {
-            try {
-                Guest guest = HotelData.getLoggedInGuest();
-                Booking booking = HotelData.getBooking();
-                double foodCost = HotelData.getFoodCost();
-                double roomTotal = booking.getRoom().calculatePrice(booking.getNumberOfNights(), foodCost);
-                double servicesTotal = HotelData.getServicesCost();
-                double grandTotal = roomTotal + servicesTotal;
-                String paymentMethod = rbCash.isSelected() ? "Cash" : rbCredit.isSelected() ? "Credit Card" : "Debit Card";
-
-                saveToCheckout(String.format("%s - %s - %d nights - Room: $%.2f - Services: $%.2f - Grand Total: $%.2f - %s",
-                    guest.getFullName(), booking.getRoom().getRoomType(), booking.getNumberOfNights(),
-                    roomTotal, servicesTotal, grandTotal, paymentMethod));
-
-                javax.swing.JOptionPane.showMessageDialog(this, "Thank You for choosing Sovereign Suites!\nPlease come again!");
-                HotelData.setBooking(null);
-                HotelData.resetServicesCost();
-                HotelData.resetFoodCost();
-                new LoginWindow().setVisible(true);
-                this.dispose();
-            } catch (Exception e) {
-                System.out.println("ERROR: " + e.getMessage());
-                e.printStackTrace();
-            }
-        }
+        Checkout();
     }//GEN-LAST:event_btnCheckOutActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

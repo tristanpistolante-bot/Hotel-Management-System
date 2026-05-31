@@ -11,7 +11,7 @@ public class LoginWindow extends javax.swing.JFrame {
         initComponents();
     }
     
-    private boolean loginFromFile(String username, String password) {
+    private boolean savetoLogIn(String username, String password) {
         try {
             BufferedReader reader = new BufferedReader(new FileReader("src\\hotel_management_systemprj\\users.txt"));
             String line;
@@ -50,6 +50,29 @@ public class LoginWindow extends javax.swing.JFrame {
             return password;
         }
     }
+        
+        private void Login() {
+            String Username = tfLoginUsername.getText().trim();
+            String Password = new String(pfLogin.getPassword()).trim();
+
+            if (Username.isEmpty() || Password.isEmpty()) {
+                JOptionPane.showMessageDialog(this, "PLEASE ENTER USERNAME AND PASSWORD.");
+                return;
+            }
+
+            if (savetoLogIn(Username, Password)) {
+                JOptionPane.showMessageDialog(this, "LOGIN SUCCESSFUL!");
+                new DashboardWindow().setVisible(true);
+                this.dispose();
+            } else {
+                JOptionPane.showMessageDialog(this, "INCORRECT CREDENTIALS.");
+            }
+        }
+        
+        private void Register() {
+            new RegisterWindow().setVisible(true);
+            this.dispose();
+        }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -150,21 +173,7 @@ public class LoginWindow extends javax.swing.JFrame {
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
         // TODO add your handling code here:
-        String Username = tfLoginUsername.getText().trim();
-        String Password = new String(pfLogin.getPassword()).trim();
-
-        if (Username.isEmpty() || Password.isEmpty()) {
-            JOptionPane.showMessageDialog(this, "PLEASE ENTER USERNAME AND PASSWORD.");
-            return;
-        }
-
-        if (loginFromFile(Username, Password)) {
-            JOptionPane.showMessageDialog(this, "LOGIN SUCCESSFUL!");
-            new DashboardWindow().setVisible(true);
-            this.dispose();
-        } else {
-            JOptionPane.showMessageDialog(this, "INCORRECT CREDENTIALS.");
-        }
+            Login();
     }//GEN-LAST:event_btnLoginActionPerformed
 
     private void tfLoginUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfLoginUsernameActionPerformed
@@ -173,8 +182,7 @@ public class LoginWindow extends javax.swing.JFrame {
 
     private void btnRegisterOption1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegisterOption1ActionPerformed
         // TODO add your handling code here:
-        new RegisterWindow().setVisible(true);
-        this.dispose();
+            Register();
     }//GEN-LAST:event_btnRegisterOption1ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -22,7 +22,6 @@ public class ViewBillWindow extends javax.swing.JFrame {
         lblServicesTotal.setText("ROOM SERVICES TOTAL: $" + servicesTotal);
         lblFoodCost.setText("FOOD SERVICES TOTAL: $" + foodCost);
         lblTotal.setText("GRAND TOTAL: $" + grandTotal);
-
     }
 
 

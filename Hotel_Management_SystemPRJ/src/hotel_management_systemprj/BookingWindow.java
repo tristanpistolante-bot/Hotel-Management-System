@@ -40,7 +40,44 @@ public class BookingWindow extends javax.swing.JFrame {
             System.out.println(e);
         }
     }
+        
+    
+    private void Confirm() {
+            Guest guest = HotelData.getLoggedInGuest();
+            Room room = HotelData.getCurrentRoom();
+            int nights = Integer.parseInt(tfNights.getText());
+            double total = room.calculatePrice(nights);
 
+            Booking newBooking = new Booking(guest, room, nights);
+            HotelData.setBooking(newBooking);
+
+            saveToLogbook(String.format("%s - %s - %d nights - $%.2f", 
+                guest.getFullName(), room.getRoomType(), nights, total));
+
+            javax.swing.JOptionPane.showMessageDialog(this, "Booking confirmed!");
+            new DashboardWindow().setVisible(true);
+            this.dispose();
+    }
+    
+    private void Done() {
+            if (tfNights.getText().isEmpty()) 
+            {
+                javax.swing.JOptionPane.showMessageDialog(this, "PLEASE ENTER NUMBER OF NIGHTS.");
+                return;
+            }
+
+            int nights = Integer.parseInt(tfNights.getText());
+            double total = HotelData.getCurrentRoom().calculatePrice(nights);
+
+            lblCost.setText("Total: $" + String.format("%.2f", total));
+
+            btnConfirmBooking.setEnabled(true);
+    }
+    
+    private void Cancel() {
+            new BrowseRoomsWindow().setVisible(true);
+            this.dispose();
+    }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -156,42 +193,17 @@ public class BookingWindow extends javax.swing.JFrame {
 
     private void btnCancelBookingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelBookingActionPerformed
         // TODO add your handling code here:
-        new BrowseRoomsWindow().setVisible(true);
-        this.dispose();
+            Cancel();
     }//GEN-LAST:event_btnCancelBookingActionPerformed
 
     private void btnConfirmBookingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmBookingActionPerformed
         // TODO add your handling code here:
-        Guest guest = HotelData.getLoggedInGuest();
-        Room room = HotelData.getCurrentRoom();
-        int nights = Integer.parseInt(tfNights.getText());
-        double total = room.calculatePrice(nights);
-
-        Booking newBooking = new Booking(guest, room, nights);
-        HotelData.setBooking(newBooking);
-
-        saveToLogbook(String.format("%s - %s - %d nights - $%.2f", 
-            guest.getFullName(), room.getRoomType(), nights, total));
-
-        javax.swing.JOptionPane.showMessageDialog(this, "Booking confirmed!");
-        new DashboardWindow().setVisible(true);
-        this.dispose();
+            Confirm();
     }//GEN-LAST:event_btnConfirmBookingActionPerformed
 
     private void btnDoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDoneActionPerformed
         // TODO add your handling code here:
-        if (tfNights.getText().isEmpty()) 
-        {
-            javax.swing.JOptionPane.showMessageDialog(this, "PLEASE ENTER NUMBER OF NIGHTS.");
-            return;
-        }
-
-        int nights = Integer.parseInt(tfNights.getText());
-        double total = HotelData.getCurrentRoom().calculatePrice(nights);
-
-        lblCost.setText("Total: $" + String.format("%.2f", total));
-        
-        btnConfirmBooking.setEnabled(true);
+            Done();
     }//GEN-LAST:event_btnDoneActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

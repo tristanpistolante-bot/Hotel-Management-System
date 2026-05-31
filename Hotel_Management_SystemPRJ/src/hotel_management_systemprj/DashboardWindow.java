@@ -21,6 +21,22 @@ public class DashboardWindow extends javax.swing.JFrame {
             btnRoom.setEnabled(false);
         }
     }
+    
+    private void Logout() {
+        if (JOptionPane.showConfirmDialog(
+                this,
+                "Are you sure you want to logout?",
+                "Logout",
+                JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
+
+            HotelData.logout();
+
+            JOptionPane.showMessageDialog(this, "Account logged out successfully!");
+
+            new LoginWindow().setVisible(true);
+            dispose();
+        }
+    }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -151,19 +167,7 @@ public class DashboardWindow extends javax.swing.JFrame {
 
     private void btnLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogoutActionPerformed
         // TODO add your handling code here:
-        if (JOptionPane.showConfirmDialog(
-                this,
-                "Are you sure you want to logout?",
-                "Logout",
-                JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
-
-            HotelData.logout();
-
-            JOptionPane.showMessageDialog(this, "Account logged out successfully!");
-
-            new LoginWindow().setVisible(true);
-            dispose();
-        }
+        Logout();
     }//GEN-LAST:event_btnLogoutActionPerformed
 
     private void btnViewBillActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewBillActionPerformed

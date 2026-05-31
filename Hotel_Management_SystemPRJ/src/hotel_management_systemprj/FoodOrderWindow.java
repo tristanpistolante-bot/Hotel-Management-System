@@ -12,6 +12,29 @@ public class FoodOrderWindow extends javax.swing.JFrame {
         btnSubmit.setEnabled(false);
     }
 
+    private void Done() {
+        totalFoodCost = 0.0;
+
+        if (cbBreakfast.isSelected()) 
+        {
+            totalFoodCost += 15.00;
+        }
+        if (cbLunch.isSelected()) 
+        {
+            totalFoodCost += 20.00;
+        }
+        if (cbDinner.isSelected()) 
+        {
+            totalFoodCost += 25.00;
+        }
+        if (cbSnacks.isSelected()) 
+        {
+            totalFoodCost += 10.00;
+        }
+
+        lblTotal.setText("Running Total: $" + totalFoodCost);
+        btnSubmit.setEnabled(true);
+    }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -128,27 +151,7 @@ public class FoodOrderWindow extends javax.swing.JFrame {
 
     private void btnDoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDoneActionPerformed
         // TODO add your handling code here:
-        totalFoodCost = 0.0;
-
-        if (cbBreakfast.isSelected()) 
-        {
-            totalFoodCost += 15.00;
-        }
-        if (cbLunch.isSelected()) 
-        {
-            totalFoodCost += 20.00;
-        }
-        if (cbDinner.isSelected()) 
-        {
-            totalFoodCost += 25.00;
-        }
-        if (cbSnacks.isSelected()) 
-        {
-            totalFoodCost += 10.00;
-        }
-
-        lblTotal.setText("Running Total: $" + totalFoodCost);
-        btnSubmit.setEnabled(true);
+        Done();
     }//GEN-LAST:event_btnDoneActionPerformed
 
     private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed

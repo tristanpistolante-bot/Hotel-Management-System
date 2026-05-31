@@ -5,10 +5,31 @@ public class BrowseRoomsWindow extends javax.swing.JFrame {
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(BrowseRoomsWindow.class.getName());
 
     public BrowseRoomsWindow() {
-        initComponents();
-           
+        initComponents();     
     }
-
+    
+    private void Back() {
+        new DashboardWindow().setVisible(true);
+        this.dispose();
+    }
+    
+    private void Chose_Standard_Room() {
+        HotelData.setCurrentRoom(new StandardRoom());
+        new BookingWindow().setVisible(true);
+        this.dispose();
+    }
+    
+    private void Chose_Deluxe_Room() {
+        HotelData.setCurrentRoom(new DeluxeRoom());
+        new BookingWindow().setVisible(true);
+        this.dispose();
+    }
+    
+    private void Chose_Suite_Room() {
+        HotelData.setCurrentRoom(new Suite());
+        new BookingWindow().setVisible(true);
+        this.dispose();
+    }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -83,29 +104,22 @@ public class BrowseRoomsWindow extends javax.swing.JFrame {
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         // TODO add your handling code here:
-        new DashboardWindow().setVisible(true);
-        this.dispose();
+        Back();
     }//GEN-LAST:event_btnBackActionPerformed
 
     private void btnChoose1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnChoose1ActionPerformed
         // TODO add your handling code here:
-        HotelData.setCurrentRoom(new StandardRoom());
-        new BookingWindow().setVisible(true);
-        this.dispose();
+        Chose_Standard_Room();
     }//GEN-LAST:event_btnChoose1ActionPerformed
 
     private void btnChoose2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnChoose2ActionPerformed
         // TODO add your handling code here:
-        HotelData.setCurrentRoom(new DeluxeRoom());
-        new BookingWindow().setVisible(true);
-        this.dispose();
+        Chose_Deluxe_Room();
     }//GEN-LAST:event_btnChoose2ActionPerformed
 
     private void btnChoose3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnChoose3ActionPerformed
         // TODO add your handling code here:
-        HotelData.setCurrentRoom(new Suite());
-        new BookingWindow().setVisible(true);
-        this.dispose();
+        Chose_Suite_Room();
     }//GEN-LAST:event_btnChoose3ActionPerformed
 
 

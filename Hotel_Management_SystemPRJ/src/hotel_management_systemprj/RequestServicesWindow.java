@@ -11,7 +11,30 @@ public class RequestServicesWindow extends javax.swing.JFrame {
         
         btnSubmit.setEnabled(false);
     }
+    
+    private void Done() {
+        totalServicesCost = 0.0;
 
+        if (cbHouseKeeping.isSelected()) 
+        {
+            totalServicesCost += 25.0;
+        }
+        if (cbRoomService.isSelected()) 
+        {
+            totalServicesCost += 35.0;
+        }
+        if (cbLaundry.isSelected()) 
+        {
+            totalServicesCost += 20.0;
+        }
+        if (cbBeddingsTowels.isSelected()) 
+        {
+            totalServicesCost += 15.0;
+        }
+
+        lblTotal.setText(" RUNNING TOTAL:                                           $" + totalServicesCost);
+        btnSubmit.setEnabled(true);
+    }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -217,27 +240,7 @@ public class RequestServicesWindow extends javax.swing.JFrame {
 
     private void btnDoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDoneActionPerformed
         // TODO add your handling code here:
-        totalServicesCost = 0.0;
-
-        if (cbHouseKeeping.isSelected()) 
-        {
-            totalServicesCost += 25.0;
-        }
-        if (cbRoomService.isSelected()) 
-        {
-            totalServicesCost += 35.0;
-        }
-        if (cbLaundry.isSelected()) 
-        {
-            totalServicesCost += 20.0;
-        }
-        if (cbBeddingsTowels.isSelected()) 
-        {
-            totalServicesCost += 15.0;
-        }
-
-        lblTotal.setText(" RUNNING TOTAL:                                           $" + totalServicesCost);
-        btnSubmit.setEnabled(true);
+        Done();
     }//GEN-LAST:event_btnDoneActionPerformed
 
     private void cbBeddingsTowelsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbBeddingsTowelsActionPerformed

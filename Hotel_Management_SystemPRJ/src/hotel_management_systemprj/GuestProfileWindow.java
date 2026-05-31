@@ -7,7 +7,7 @@ public class GuestProfileWindow extends javax.swing.JFrame {
     public GuestProfileWindow() {
         initComponents();
         
-            Guest guest = HotelData.getLoggedInGuest();
+           Guest guest = HotelData.getLoggedInGuest();
 
            tfFullName.setText(guest.getFullName());
            tfPhoneNumber.setText(guest.getPhoneNumber());
@@ -25,6 +25,86 @@ public class GuestProfileWindow extends javax.swing.JFrame {
                lblRoom.setText("N/A");
            }
     }
+    
+    private void Save() {
+        Guest guest = HotelData.getLoggedInGuest();
+
+        String newName     = tfFullName.getText().trim();
+        String newPhone    = tfPhoneNumber.getText().trim();
+        String newUsername = tfUsername.getText().trim();
+        String newPassword = tfPassword.getText().trim();
+
+        if (newName.isEmpty() || newPhone.isEmpty() || 
+            newUsername.isEmpty() || newPassword.isEmpty()) 
+        {
+            javax.swing.JOptionPane.showMessageDialog(this, "Fields cannot be empty.");
+            return;
+        }
+
+        try 
+        {
+            Long.parseLong(newPhone);
+        } 
+        catch (NumberFormatException e) 
+        {
+            javax.swing.JOptionPane.showMessageDialog(this, "Phone number must be numbers only.");
+            return;
+        }
+
+        guest.setName(newName);
+        guest.setPhoneNumber(newPhone);
+        String oldUsername = guest.getUsername();
+        guest.setUsername(newUsername);
+        guest.setPassword(newPassword);
+        
+        saveChangesToFile(newName, newPhone, newUsername, newPassword, oldUsername);
+
+        javax.swing.JOptionPane.showMessageDialog(this, "Profile updated successfully!");
+    }
+    
+    private void saveChangesToFile(String fullName, String phoneNumber, String username, String password,  String oldUsername) {
+        try {
+            // Read all lines
+            java.util.ArrayList<String> lines = new java.util.ArrayList<>();
+            java.io.BufferedReader reader = new java.io.BufferedReader(new java.io.FileReader("src\\hotel_management_systemprj\\users.txt"));
+            String line;
+            while ((line = reader.readLine()) != null) {
+                lines.add(line);
+            }
+            reader.close();
+
+            // Find and replace the logged in guest's line
+            Guest guest = HotelData.getLoggedInGuest();
+            java.io.BufferedWriter writer = new java.io.BufferedWriter(new java.io.FileWriter("src\\hotel_management_systemprj\\users.txt", false));
+            for (String l : lines) {
+                String[] parts = l.split(" - ");
+                if (parts.length >= 3 && parts[2].trim().equalsIgnoreCase(oldUsername)) {
+                    writer.write(String.format("%s - %s - %s - %s", fullName, phoneNumber, username, hashPassword(password)));
+                } else {
+                    writer.write(l);
+                }
+                writer.newLine();
+            }
+            writer.close();
+        } catch (java.io.IOException e) {
+            javax.swing.JOptionPane.showMessageDialog(this, "Error saving changes: " + e.getMessage());
+        }
+    }
+
+    private String hashPassword(String password) {
+        try {
+            java.security.MessageDigest md = java.security.MessageDigest.getInstance("MD5");
+            byte[] hashed = md.digest(password.getBytes());
+            StringBuilder sb = new StringBuilder();
+            for (byte b : hashed) {
+                sb.append(String.format("%02x", b));
+            }
+            return sb.toString();
+        } catch (Exception e) {
+            return password;
+        }
+    }
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -164,83 +244,9 @@ public class GuestProfileWindow extends javax.swing.JFrame {
 
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
         // TODO add your handling code here:
-        Guest guest = HotelData.getLoggedInGuest();
-
-        String newName     = tfFullName.getText().trim();
-        String newPhone    = tfPhoneNumber.getText().trim();
-        String newUsername = tfUsername.getText().trim();
-        String newPassword = tfPassword.getText().trim();
-
-        if (newName.isEmpty() || newPhone.isEmpty() || 
-            newUsername.isEmpty() || newPassword.isEmpty()) 
-        {
-            javax.swing.JOptionPane.showMessageDialog(this, "Fields cannot be empty.");
-            return;
-        }
-
-        try 
-        {
-            Long.parseLong(newPhone);
-        } 
-        catch (NumberFormatException e) 
-        {
-            javax.swing.JOptionPane.showMessageDialog(this, "Phone number must be numbers only.");
-            return;
-        }
-
-        guest.setName(newName);
-        guest.setPhoneNumber(newPhone);
-        String oldUsername = guest.getUsername();
-        guest.setUsername(newUsername);
-        guest.setPassword(newPassword);
-        
-        saveChangesToFile(newName, newPhone, newUsername, newPassword, oldUsername);
-
-        javax.swing.JOptionPane.showMessageDialog(this, "Profile updated successfully!");
+        Save();
     }//GEN-LAST:event_btnSaveActionPerformed
 
-    private void saveChangesToFile(String fullName, String phoneNumber, String username, String password,  String oldUsername) {
-        try {
-            // Read all lines
-            java.util.ArrayList<String> lines = new java.util.ArrayList<>();
-            java.io.BufferedReader reader = new java.io.BufferedReader(new java.io.FileReader("src\\hotel_management_systemprj\\users.txt"));
-            String line;
-            while ((line = reader.readLine()) != null) {
-                lines.add(line);
-            }
-            reader.close();
-
-            // Find and replace the logged in guest's line
-            Guest guest = HotelData.getLoggedInGuest();
-            java.io.BufferedWriter writer = new java.io.BufferedWriter(new java.io.FileWriter("src\\hotel_management_systemprj\\users.txt", false));
-            for (String l : lines) {
-                String[] parts = l.split(" - ");
-                if (parts.length >= 3 && parts[2].trim().equalsIgnoreCase(oldUsername)) {
-                    writer.write(String.format("%s - %s - %s - %s", fullName, phoneNumber, username, hashPassword(password)));
-                } else {
-                    writer.write(l);
-                }
-                writer.newLine();
-            }
-            writer.close();
-        } catch (java.io.IOException e) {
-            javax.swing.JOptionPane.showMessageDialog(this, "Error saving changes: " + e.getMessage());
-        }
-    }
-
-    private String hashPassword(String password) {
-        try {
-            java.security.MessageDigest md = java.security.MessageDigest.getInstance("MD5");
-            byte[] hashed = md.digest(password.getBytes());
-            StringBuilder sb = new StringBuilder();
-            for (byte b : hashed) {
-                sb.append(String.format("%02x", b));
-            }
-            return sb.toString();
-        } catch (Exception e) {
-            return password;
-        }
-    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBack;
     private javax.swing.JButton btnSave;

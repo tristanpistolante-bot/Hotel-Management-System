@@ -56,6 +56,36 @@ public class RegisterWindow extends javax.swing.JFrame {
             return password;
         }
     }
+        
+        private void Register() {
+            if (tfFullName.getText().isEmpty() || tfPhoneNumber.getText().isEmpty() || 
+            tfRegisterUsername.getText().isEmpty() || pfRegister.getPassword().length == 0) {
+            JOptionPane.showMessageDialog(this, "PLEASE FILL IN ALL THE FIELDS.");
+            return;
+        }
+
+        try {
+            Long.parseLong(tfPhoneNumber.getText());
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "INVALID PHONE NUMBER.");
+            return;
+        }
+
+        String FullName = tfFullName.getText();
+        String PhoneNumber = tfPhoneNumber.getText();
+        String Username = tfRegisterUsername.getText();
+        String Password = new String(pfRegister.getPassword());
+
+        if (isUsernameTaken(Username)) {
+            JOptionPane.showMessageDialog(this, "USERNAME ALREADY TAKEN.");
+            return;
+        }
+
+        saveRegistry(FullName, PhoneNumber, Username, Password);
+        JOptionPane.showMessageDialog(this, "REGISTERED SUCCESSFULLY!");
+        new LoginWindow().setVisible(true);
+        this.dispose();
+        }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -174,33 +204,7 @@ public class RegisterWindow extends javax.swing.JFrame {
 
     private void btnRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegisterActionPerformed
         // TODO add your handling code here:
-        if (tfFullName.getText().isEmpty() || tfPhoneNumber.getText().isEmpty() || 
-            tfRegisterUsername.getText().isEmpty() || pfRegister.getPassword().length == 0) {
-            JOptionPane.showMessageDialog(this, "PLEASE FILL IN ALL THE FIELDS.");
-            return;
-        }
-
-        try {
-            Long.parseLong(tfPhoneNumber.getText());
-        } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(this, "INVALID PHONE NUMBER.");
-            return;
-        }
-
-        String FullName = tfFullName.getText();
-        String PhoneNumber = tfPhoneNumber.getText();
-        String Username = tfRegisterUsername.getText();
-        String Password = new String(pfRegister.getPassword());
-
-        if (isUsernameTaken(Username)) {
-            JOptionPane.showMessageDialog(this, "USERNAME ALREADY TAKEN.");
-            return;
-        }
-
-        saveRegistry(FullName, PhoneNumber, Username, Password);
-        JOptionPane.showMessageDialog(this, "REGISTERED SUCCESSFULLY!");
-        new LoginWindow().setVisible(true);
-        this.dispose();
+        Register();
     }//GEN-LAST:event_btnRegisterActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
