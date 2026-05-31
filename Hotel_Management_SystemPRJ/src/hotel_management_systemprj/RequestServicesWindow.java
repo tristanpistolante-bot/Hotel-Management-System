@@ -41,12 +41,17 @@ public class RequestServicesWindow extends javax.swing.JFrame {
         setBackground(new java.awt.Color(230, 237, 255));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setLayout(null);
 
         cbHouseKeeping.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         cbHouseKeeping.setText("HOUSE KEEPING");
+        jPanel1.add(cbHouseKeeping);
+        cbHouseKeeping.setBounds(10, 160, 130, 20);
 
         cbRoomService.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         cbRoomService.setText("ROOM SERVICE");
+        jPanel1.add(cbRoomService);
+        cbRoomService.setBounds(10, 210, 120, 20);
 
         cbBeddingsTowels.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         cbBeddingsTowels.setText("EXTRA BEDDINGS/TOWELS");
@@ -55,13 +60,19 @@ public class RequestServicesWindow extends javax.swing.JFrame {
                 cbBeddingsTowelsActionPerformed(evt);
             }
         });
+        jPanel1.add(cbBeddingsTowels);
+        cbBeddingsTowels.setBounds(10, 110, 180, 20);
 
         cbLaundry.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         cbLaundry.setText("LAUNDRY");
+        jPanel1.add(cbLaundry);
+        cbLaundry.setBounds(10, 260, 90, 20);
 
         lblTotal.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lblTotal.setText(" RUNNING TOTAL");
         lblTotal.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 0, 255), 1, true));
+        jPanel1.add(lblTotal);
+        lblTotal.setBounds(10, 340, 340, 40);
 
         btnSubmit.setBackground(new java.awt.Color(102, 0, 255));
         btnSubmit.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -72,6 +83,8 @@ public class RequestServicesWindow extends javax.swing.JFrame {
                 btnSubmitActionPerformed(evt);
             }
         });
+        jPanel1.add(btnSubmit);
+        btnSubmit.setBounds(10, 400, 140, 23);
 
         btnDone.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnDone.setForeground(new java.awt.Color(102, 0, 255));
@@ -82,6 +95,8 @@ public class RequestServicesWindow extends javax.swing.JFrame {
                 btnDoneActionPerformed(evt);
             }
         });
+        jPanel1.add(btnDone);
+        btnDone.setBounds(190, 400, 70, 23);
 
         btnBack.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnBack.setForeground(new java.awt.Color(102, 0, 255));
@@ -92,110 +107,58 @@ public class RequestServicesWindow extends javax.swing.JFrame {
                 btnBackActionPerformed(evt);
             }
         });
+        jPanel1.add(btnBack);
+        btnBack.setBounds(280, 400, 70, 23);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(102, 0, 255));
         jLabel1.setText("REQUEST SERVICES");
+        jPanel1.add(jLabel1);
+        jLabel1.setBounds(10, 10, 200, 40);
 
-        jLabel2.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(102, 0, 255));
         jLabel2.setText("Select the services you would like to request");
+        jPanel1.add(jLabel2);
+        jLabel2.setBounds(10, 50, 320, 16);
 
         jLabel3.setForeground(new java.awt.Color(102, 0, 255));
         jLabel3.setText("_________________________________________________________________________");
+        jPanel1.add(jLabel3);
+        jLabel3.setBounds(10, 50, 365, 40);
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(102, 0, 255));
         jLabel4.setText("$20");
+        jPanel1.add(jLabel4);
+        jLabel4.setBounds(320, 260, 30, 16);
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(102, 0, 255));
         jLabel5.setText("$15");
+        jPanel1.add(jLabel5);
+        jLabel5.setBounds(320, 110, 30, 16);
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(102, 0, 255));
         jLabel6.setText("$25");
+        jPanel1.add(jLabel6);
+        jLabel6.setBounds(320, 160, 30, 16);
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(102, 0, 255));
         jLabel7.setText("$35");
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(10, 10, 10)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(cbBeddingsTowels, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(130, 130, 130)
-                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(cbHouseKeeping, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(180, 180, 180)
-                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(cbRoomService, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(190, 190, 190)
-                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(cbLaundry, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(220, 220, 220)
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(lblTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(btnSubmit, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(40, 40, 40)
-                        .addComponent(btnDone, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(20, 20, 20)
-                        .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(10, 10, 10)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(20, 20, 20)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(cbBeddingsTowels)
-                    .addComponent(jLabel5))
-                .addGap(30, 30, 30)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(cbHouseKeeping)
-                    .addComponent(jLabel6))
-                .addGap(30, 30, 30)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(cbRoomService)
-                    .addComponent(jLabel7))
-                .addGap(30, 30, 30)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(cbLaundry)
-                    .addComponent(jLabel4))
-                .addGap(60, 60, 60)
-                .addComponent(lblTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(20, 20, 20)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnSubmit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnDone, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnBack, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(24, Short.MAX_VALUE))
-        );
+        jPanel1.add(jLabel7);
+        jLabel7.setBounds(320, 210, 30, 16);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 365, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 366, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 450, Short.MAX_VALUE)
         );
 
         pack();

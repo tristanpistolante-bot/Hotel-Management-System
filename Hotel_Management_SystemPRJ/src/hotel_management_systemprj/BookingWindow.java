@@ -43,113 +43,142 @@ public class BookingWindow extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        lblSelectedRoom = new javax.swing.JLabel();
-        lblPrice = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
         lblGuestName = new javax.swing.JLabel();
+        lblSelectedRoom = new javax.swing.JLabel();
+        lblAmenities = new javax.swing.JLabel();
+        lblPrice = new javax.swing.JLabel();
         lblNights = new javax.swing.JLabel();
+        tfNights = new javax.swing.JTextField();
+        btnDone = new javax.swing.JButton();
         lblCost = new javax.swing.JLabel();
         btnConfirmBooking = new javax.swing.JButton();
         btnCancelBooking = new javax.swing.JButton();
-        tfNights = new javax.swing.JTextField();
-        btnDone = new javax.swing.JButton();
-        lblAmenities = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(230, 237, 255));
 
-        lblSelectedRoom.setText("SELECTED ROOM ");
-
-        lblPrice.setText("PRICE");
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setLayout(null);
 
         lblGuestName.setText("GUEST NAME");
+        lblGuestName.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 0, 255), 2, true));
+        jPanel1.add(lblGuestName);
+        lblGuestName.setBounds(10, 50, 320, 40);
 
+        lblSelectedRoom.setText("SELECTED ROOM ");
+        lblSelectedRoom.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 0, 255), 2, true));
+        jPanel1.add(lblSelectedRoom);
+        lblSelectedRoom.setBounds(10, 130, 320, 40);
+
+        lblAmenities.setText("AMENITIES");
+        lblAmenities.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 0, 255), 2, true));
+        jPanel1.add(lblAmenities);
+        lblAmenities.setBounds(10, 210, 320, 40);
+
+        lblPrice.setText("PRICE");
+        lblPrice.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 0, 255), 2, true));
+        jPanel1.add(lblPrice);
+        lblPrice.setBounds(10, 290, 320, 40);
+
+        lblNights.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblNights.setForeground(new java.awt.Color(102, 0, 255));
         lblNights.setText("NUMBER OF NIGHTS");
+        jPanel1.add(lblNights);
+        lblNights.setBounds(10, 350, 130, 16);
 
+        tfNights.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 0, 255), 2, true));
+        tfNights.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfNightsActionPerformed(evt);
+            }
+        });
+        jPanel1.add(tfNights);
+        tfNights.setBounds(10, 370, 320, 40);
+
+        btnDone.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnDone.setForeground(new java.awt.Color(102, 0, 255));
+        btnDone.setText("DONE");
+        btnDone.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 0, 255), 2, true));
+        btnDone.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDoneActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnDone);
+        btnDone.setBounds(120, 430, 80, 30);
+
+        lblCost.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblCost.setForeground(new java.awt.Color(102, 0, 255));
         lblCost.setText("TOTAL ESTIMATED COST");
+        jPanel1.add(lblCost);
+        lblCost.setBounds(100, 490, 150, 30);
 
+        btnConfirmBooking.setBackground(new java.awt.Color(102, 0, 255));
+        btnConfirmBooking.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnConfirmBooking.setForeground(new java.awt.Color(255, 255, 255));
         btnConfirmBooking.setText("CONFIRM");
         btnConfirmBooking.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnConfirmBookingActionPerformed(evt);
             }
         });
+        jPanel1.add(btnConfirmBooking);
+        btnConfirmBooking.setBounds(70, 550, 90, 30);
 
+        btnCancelBooking.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnCancelBooking.setForeground(new java.awt.Color(102, 0, 255));
         btnCancelBooking.setText("CANCEL");
+        btnCancelBooking.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 0, 255), 2, true));
         btnCancelBooking.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCancelBookingActionPerformed(evt);
             }
         });
+        jPanel1.add(btnCancelBooking);
+        btnCancelBooking.setBounds(170, 550, 90, 30);
 
-        btnDone.setText("DONE");
-        btnDone.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnDoneActionPerformed(evt);
-            }
-        });
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(102, 0, 255));
+        jLabel1.setText("GUEST NAME");
+        jPanel1.add(jLabel1);
+        jLabel1.setBounds(10, 30, 80, 20);
 
-        lblAmenities.setText("AMENITIES");
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(102, 0, 255));
+        jLabel2.setText("SELECTED ROOM");
+        jPanel1.add(jLabel2);
+        jLabel2.setBounds(10, 110, 100, 16);
+
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(102, 0, 255));
+        jLabel3.setText("AMENITIES");
+        jPanel1.add(jLabel3);
+        jLabel3.setBounds(10, 190, 90, 16);
+
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(102, 0, 255));
+        jLabel4.setText("PRICE");
+        jPanel1.add(jLabel4);
+        jLabel4.setBounds(10, 266, 90, 20);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(56, 56, 56)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblAmenities)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(lblNights)
-                                .addGap(40, 40, 40)
-                                .addComponent(tfNights, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addContainerGap(101, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblGuestName)
-                            .addComponent(lblSelectedRoom)
-                            .addComponent(lblPrice)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(70, 70, 70)
-                                .addComponent(lblCost)))
-                        .addContainerGap(139, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnConfirmBooking)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnCancelBooking)
-                        .addGap(72, 72, 72))))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(148, 148, 148)
-                .addComponent(btnDone)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 341, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(11, Short.MAX_VALUE)
-                .addComponent(lblGuestName)
-                .addGap(12, 12, 12)
-                .addComponent(lblSelectedRoom)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lblAmenities)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lblPrice)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblNights)
-                    .addComponent(tfNights, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(btnDone)
-                .addGap(20, 20, 20)
-                .addComponent(lblCost)
-                .addGap(34, 34, 34)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnCancelBooking)
-                    .addComponent(btnConfirmBooking))
-                .addContainerGap(27, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 601, Short.MAX_VALUE)
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCancelBookingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelBookingActionPerformed
@@ -192,10 +221,19 @@ public class BookingWindow extends javax.swing.JFrame {
         btnConfirmBooking.setEnabled(true);
     }//GEN-LAST:event_btnDoneActionPerformed
 
+    private void tfNightsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfNightsActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfNightsActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCancelBooking;
     private javax.swing.JButton btnConfirmBooking;
     private javax.swing.JButton btnDone;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lblAmenities;
     private javax.swing.JLabel lblCost;
     private javax.swing.JLabel lblGuestName;
