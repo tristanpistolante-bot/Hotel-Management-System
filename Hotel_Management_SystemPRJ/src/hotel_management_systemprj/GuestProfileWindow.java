@@ -46,74 +46,110 @@ public class GuestProfileWindow extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
         btnBack = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
+        tfFullName = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        lblPASSWORD1 = new javax.swing.JLabel();
-        lblBOOKINGSTATUS1 = new javax.swing.JLabel();
-        lblROOM1 = new javax.swing.JLabel();
-        tfPassword = new javax.swing.JTextField();
         tfPhoneNumber = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
         tfUsername = new javax.swing.JTextField();
-        btnSave = new javax.swing.JButton();
+        lblPASSWORD1 = new javax.swing.JLabel();
+        tfPassword = new javax.swing.JTextField();
+        lblBOOKINGSTATUS1 = new javax.swing.JLabel();
         tfBookingStatus = new javax.swing.JTextField();
+        btnSave = new javax.swing.JButton();
+        lblROOM1 = new javax.swing.JLabel();
         tfRoom = new javax.swing.JTextField();
-        tfFullName = new javax.swing.JTextField();
+        jLabel24 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new javax.swing.OverlayLayout(getContentPane()));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setLayout(null);
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(102, 0, 255));
         jLabel4.setText("Guest Profile");
+        jPanel1.add(jLabel4);
+        jLabel4.setBounds(10, 10, 148, 32);
 
-        jLabel5.setForeground(new java.awt.Color(102, 0, 255));
-        jLabel5.setText("Manage your account information");
-
+        btnBack.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnBack.setForeground(new java.awt.Color(102, 0, 255));
         btnBack.setText("BACK");
-        btnBack.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 0, 255)));
+        btnBack.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 0, 255), 2, true));
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBackActionPerformed(evt);
             }
         });
+        jPanel1.add(btnBack);
+        btnBack.setBounds(341, 10, 60, 30);
+
+        jLabel5.setForeground(new java.awt.Color(102, 0, 255));
+        jLabel5.setText("Manage your account information");
+        jPanel1.add(jLabel5);
+        jLabel5.setBounds(10, 40, 182, 16);
+
+        tfFullName.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 0, 255), 2, true));
+        jPanel1.add(tfFullName);
+        tfFullName.setBounds(10, 110, 390, 30);
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(102, 0, 255));
-        jLabel6.setText("FULL NAME:");
+        jLabel6.setText("FULL NAME");
+        jPanel1.add(jLabel6);
+        jLabel6.setBounds(10, 90, 90, 16);
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(102, 0, 255));
-        jLabel7.setText("PHONE NUMBER:");
+        jLabel7.setText("PHONE NUMBER");
+        jPanel1.add(jLabel7);
+        jLabel7.setBounds(10, 160, 110, 16);
+
+        tfPhoneNumber.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 0, 255), 2, true));
+        jPanel1.add(tfPhoneNumber);
+        tfPhoneNumber.setBounds(10, 180, 390, 30);
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(102, 0, 255));
-        jLabel8.setText("USERNAME:");
+        jLabel8.setText("USERNAME");
+        jPanel1.add(jLabel8);
+        jLabel8.setBounds(10, 230, 80, 16);
+
+        tfUsername.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 0, 255), 2, true));
+        jPanel1.add(tfUsername);
+        tfUsername.setBounds(10, 250, 390, 30);
 
         lblPASSWORD1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         lblPASSWORD1.setForeground(new java.awt.Color(102, 0, 255));
-        lblPASSWORD1.setText("PASSWORD:");
+        lblPASSWORD1.setText("PASSWORD");
+        jPanel1.add(lblPASSWORD1);
+        lblPASSWORD1.setBounds(10, 300, 66, 10);
+
+        tfPassword.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 0, 255), 2, true));
+        jPanel1.add(tfPassword);
+        tfPassword.setBounds(10, 320, 390, 30);
 
         lblBOOKINGSTATUS1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         lblBOOKINGSTATUS1.setForeground(new java.awt.Color(102, 0, 255));
-        lblBOOKINGSTATUS1.setText("BOOKING STATUS:");
+        lblBOOKINGSTATUS1.setText("BOOKING STATUS");
+        jPanel1.add(lblBOOKINGSTATUS1);
+        lblBOOKINGSTATUS1.setBounds(10, 370, 104, 16);
 
-        lblROOM1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        lblROOM1.setForeground(new java.awt.Color(102, 0, 255));
-        lblROOM1.setText("ROOM:");
+        tfBookingStatus.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 0, 255), 2, true));
+        tfBookingStatus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfBookingStatusActionPerformed(evt);
+            }
+        });
+        jPanel1.add(tfBookingStatus);
+        tfBookingStatus.setBounds(10, 390, 390, 30);
 
-        tfPassword.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 0, 255)));
-
-        tfPhoneNumber.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 0, 255)));
-
-        tfUsername.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 0, 255)));
-
+        btnSave.setBackground(new java.awt.Color(102, 0, 255));
         btnSave.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        btnSave.setForeground(new java.awt.Color(102, 0, 255));
+        btnSave.setForeground(new java.awt.Color(255, 255, 255));
         btnSave.setText("SAVE");
         btnSave.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 0, 255)));
         btnSave.addActionListener(new java.awt.event.ActionListener() {
@@ -121,115 +157,25 @@ public class GuestProfileWindow extends javax.swing.JFrame {
                 btnSaveActionPerformed(evt);
             }
         });
+        jPanel1.add(btnSave);
+        btnSave.setBounds(150, 520, 90, 30);
 
-        tfBookingStatus.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 0, 255)));
-        tfBookingStatus.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tfBookingStatusActionPerformed(evt);
-            }
-        });
+        lblROOM1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblROOM1.setForeground(new java.awt.Color(102, 0, 255));
+        lblROOM1.setText("ROOM");
+        jPanel1.add(lblROOM1);
+        lblROOM1.setBounds(10, 440, 37, 16);
 
-        tfRoom.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 0, 255)));
+        tfRoom.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 0, 255), 2, true));
+        jPanel1.add(tfRoom);
+        tfRoom.setBounds(10, 460, 390, 30);
 
-        tfFullName.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 0, 255)));
+        jLabel24.setForeground(new java.awt.Color(102, 0, 255));
+        jLabel24.setText("_________________________________________________________________________________");
+        jPanel1.add(jLabel24);
+        jLabel24.setBounds(10, 50, 400, 16);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(15, 15, 15)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel5)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                            .addComponent(jLabel4)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(tfRoom, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(19, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addGap(17, 17, 17)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                    .addComponent(jLabel6)
-                                    .addGap(0, 0, Short.MAX_VALUE))
-                                .addComponent(tfFullName, javax.swing.GroupLayout.Alignment.LEADING))
-                            .addGap(2, 2, 2))
-                        .addComponent(tfPhoneNumber, javax.swing.GroupLayout.DEFAULT_SIZE, 374, Short.MAX_VALUE)
-                        .addComponent(tfPassword, javax.swing.GroupLayout.DEFAULT_SIZE, 374, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(tfUsername, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lblROOM1, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lblPASSWORD1, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(tfBookingStatus, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 374, Short.MAX_VALUE)
-                                    .addComponent(lblBOOKINGSTATUS1, javax.swing.GroupLayout.Alignment.LEADING))
-                                .addComponent(jLabel8))
-                            .addGap(0, 0, Short.MAX_VALUE)))
-                    .addGap(18, 18, 18))
-                .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addGap(163, 163, 163)
-                    .addComponent(btnSave, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(167, Short.MAX_VALUE)))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(btnBack))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 306, Short.MAX_VALUE)
-                .addComponent(tfRoom, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(98, 98, 98))
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addGap(85, 85, 85)
-                    .addComponent(jLabel6)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(tfFullName, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(jLabel7)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(tfPhoneNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(jLabel8)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(tfUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(lblPASSWORD1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(tfPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(lblBOOKINGSTATUS1)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(tfBookingStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(lblROOM1)
-                    .addGap(58, 58, 58)
-                    .addComponent(btnSave)
-                    .addContainerGap(29, Short.MAX_VALUE)))
-        );
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
+        getContentPane().add(jPanel1);
 
         pack();
         setLocationRelativeTo(null);
@@ -309,6 +255,7 @@ public class GuestProfileWindow extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBack;
     private javax.swing.JButton btnSave;
+    private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
