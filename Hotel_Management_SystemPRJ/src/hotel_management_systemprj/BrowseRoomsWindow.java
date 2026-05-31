@@ -50,7 +50,7 @@ public class BrowseRoomsWindow extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnChoose1);
-        btnChoose1.setBounds(500, 380, 190, 30);
+        btnChoose1.setBounds(20, 380, 190, 30);
 
         btnChoose2.setBackground(new java.awt.Color(102, 0, 255));
         btnChoose2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -74,7 +74,7 @@ public class BrowseRoomsWindow extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnChoose3);
-        btnChoose3.setBounds(20, 380, 190, 30);
+        btnChoose3.setBounds(500, 380, 190, 30);
 
         btnBack.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnBack.setForeground(new java.awt.Color(102, 0, 255));
