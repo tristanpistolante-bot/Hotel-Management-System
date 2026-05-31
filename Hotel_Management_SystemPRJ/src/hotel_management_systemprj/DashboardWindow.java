@@ -41,11 +41,12 @@ public class DashboardWindow extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(null);
 
-        lblWelcome.setFont(new java.awt.Font("Monospaced", 1, 24)); // NOI18N
+        lblWelcome.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        lblWelcome.setForeground(new java.awt.Color(102, 0, 255));
         lblWelcome.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblWelcome.setText("WELCOME TO SOVEREIGN SUITES");
         jPanel1.add(lblWelcome);
-        lblWelcome.setBounds(100, -10, 400, 60);
+        lblWelcome.setBounds(100, 0, 400, 40);
 
         btnFoodServices.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnFoodServices.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/utensils.png"))); // NOI18N

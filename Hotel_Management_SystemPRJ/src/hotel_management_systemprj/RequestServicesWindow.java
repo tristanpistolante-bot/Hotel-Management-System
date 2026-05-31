@@ -84,7 +84,7 @@ public class RequestServicesWindow extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnSubmit);
-        btnSubmit.setBounds(10, 400, 140, 23);
+        btnSubmit.setBounds(10, 400, 140, 30);
 
         btnDone.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnDone.setForeground(new java.awt.Color(102, 0, 255));
@@ -121,6 +121,7 @@ public class RequestServicesWindow extends javax.swing.JFrame {
         jPanel1.add(jLabel2);
         jLabel2.setBounds(10, 50, 320, 16);
 
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(102, 0, 255));
         jLabel3.setText("_________________________________________________________________________");
         jPanel1.add(jLabel3);
