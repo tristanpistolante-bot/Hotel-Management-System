@@ -244,9 +244,7 @@ public class BookingWindow extends javax.swing.JFrame {
 
         int nights = Integer.parseInt(tfNights.getText());
         Room room = HotelData.getCurrentRoom();
-        Guest guest = HotelData.getLoggedInGuest();
-        Booking tempBooking = new Booking(guest, room, nights, tfCheckInDate.getText());
-        double total = tempBooking.calculatePrice(nights);
+        double total = room.calculatePrice(nights);
 
         lblCost.setText("TOTAL: $" + String.format("%.2f", total));
         

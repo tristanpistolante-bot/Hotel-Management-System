@@ -41,11 +41,11 @@ public class Booking
     
     public double calculatePrice(int nights) 
     {
-        return room.getPricePerNight() * nights;
+        return room.calculatePrice(nights);
     }
 
     public double calculatePrice(int nights, double servicesCost, double foodCost) 
     {
-        return (room.getPricePerNight() * nights) + servicesCost + foodCost;
+        return room.calculatePrice(nights) + servicesCost + foodCost;
     }
 }
