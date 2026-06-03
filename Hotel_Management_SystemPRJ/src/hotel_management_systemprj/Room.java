@@ -43,10 +43,5 @@ public class Room
        public double calculatePrice(int nights) 
     {
         return PricePerNight * nights;
-    }
-      
-    public double calculatePrice(int nights, double foodCost) 
-    {
-        return (getPricePerNight() * nights) + foodCost;
-    }   
+    }  
 }

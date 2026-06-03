@@ -3,8 +3,17 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Hotel%20Management%20System/Hotel_Management_SystemPRJ/src/hotel_management_systemprj/BrowseRoomsWindow.java</file>
-            <file>file:/C:/Hotel%20Management%20System/Hotel_Management_SystemPRJ/src/hotel_management_systemprj/RequestServicesWindow.java</file>
+            <file>file:/C:/Users/BZLD/Documents/NetBeansProjects/HOTEL/Hotel-Management-System/Hotel_Management_SystemPRJ/src/hotel_management_systemprj/RegisterWindow.java</file>
+            <file>file:/C:/Users/BZLD/Documents/NetBeansProjects/HOTEL/Hotel-Management-System/Hotel_Management_SystemPRJ/src/hotel_management_systemprj/LoginWindow.java</file>
+            <file>file:/C:/Users/BZLD/Documents/NetBeansProjects/HOTEL/Hotel-Management-System/Hotel_Management_SystemPRJ/src/hotel_management_systemprj/DashboardWindow.java</file>
+            <file>file:/C:/Users/BZLD/Documents/NetBeansProjects/HOTEL/Hotel-Management-System/Hotel_Management_SystemPRJ/src/hotel_management_systemprj/GuestProfileWindow.java</file>
+            <file>file:/C:/Users/BZLD/Documents/NetBeansProjects/HOTEL/Hotel-Management-System/Hotel_Management_SystemPRJ/src/hotel_management_systemprj/BrowseRoomsWindow.java</file>
+            <file>file:/C:/Users/BZLD/Documents/NetBeansProjects/HOTEL/Hotel-Management-System/Hotel_Management_SystemPRJ/src/hotel_management_systemprj/BookingWindow.java</file>
+            <file>file:/C:/Users/BZLD/Documents/NetBeansProjects/HOTEL/Hotel-Management-System/Hotel_Management_SystemPRJ/src/hotel_management_systemprj/ViewBillWindow.java</file>
+            <file>file:/C:/Users/BZLD/Documents/NetBeansProjects/HOTEL/Hotel-Management-System/Hotel_Management_SystemPRJ/src/hotel_management_systemprj/HotelData.java</file>
+            <file>file:/C:/Users/BZLD/Documents/NetBeansProjects/HOTEL/Hotel-Management-System/Hotel_Management_SystemPRJ/src/hotel_management_systemprj/RequestServicesWindow.java</file>
+            <file>file:/C:/Users/BZLD/Documents/NetBeansProjects/HOTEL/Hotel-Management-System/Hotel_Management_SystemPRJ/src/hotel_management_systemprj/FoodOrderWindow.java</file>
+            <file>file:/C:/Users/BZLD/Documents/NetBeansProjects/HOTEL/Hotel-Management-System/Hotel_Management_SystemPRJ/src/hotel_management_systemprj/Guest.java</file>
         </group>
     </open-files>
 </project-private>

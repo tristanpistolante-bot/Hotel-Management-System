@@ -6,13 +6,15 @@ public class Booking
     private Room room;
     private int NumberOfNights;
     private double TotalCost;
+    private String checkInDate;
 
-    public Booking(Guest guest, Room room, int numberOfNights) 
+    public Booking(Guest guest, Room room, int numberOfNights, String checkInDate) 
     {
         this.guest = guest;
         this.room = room;
         this.NumberOfNights = numberOfNights;
         this.TotalCost = room.calculatePrice(numberOfNights);
+        this.checkInDate = checkInDate;
     }
 
     public Guest getGuest()        
@@ -30,5 +32,20 @@ public class Booking
     public double getTotalCost()   
     { 
         return TotalCost; 
+    }
+    
+    public String getCheckInDate() 
+    { 
+        return checkInDate; 
+    }
+    
+    public double calculatePrice(int nights) 
+    {
+        return room.getPricePerNight() * nights;
+    }
+
+    public double calculatePrice(int nights, double servicesCost, double foodCost) 
+    {
+        return (room.getPricePerNight() * nights) + servicesCost + foodCost;
     }
 }

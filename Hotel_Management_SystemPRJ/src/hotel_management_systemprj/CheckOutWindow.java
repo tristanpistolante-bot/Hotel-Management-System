@@ -21,8 +21,8 @@ public class CheckOutWindow extends javax.swing.JFrame {
 
         lblTotal.setText("Grand Total: $" + String.format("%.2f", grandTotal));
         
-        String checkIn = getCheckInDateTime();
-        lblCheckIn.setText(checkIn);
+       String checkIn = HotelData.getBooking().getCheckInDate();
+       lblCheckIn.setText(checkIn);
 
         // Check-out is current date and time
         String checkOut = java.time.LocalDateTime.now().format(
@@ -218,23 +218,6 @@ public class CheckOutWindow extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnCheckOutActionPerformed
 
-    private String getCheckInDateTime() {
-    String result = "N/A";
-    try {
-        java.io.BufferedReader reader = new java.io.BufferedReader(new java.io.FileReader("src\\hotel_management_systemprj\\logbook.txt"));
-        String line;
-        String fullName = HotelData.getLoggedInGuest().getFullName();
-        while ((line = reader.readLine()) != null) {
-            if (line.contains(fullName)) {
-                result = line.split(" - ")[0].trim();
-            }
-        }
-        reader.close();
-    } catch (java.io.IOException e) {
-        System.out.println("Error reading logbook: " + e.getMessage());
-    }
-    return result;
-}
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBack;

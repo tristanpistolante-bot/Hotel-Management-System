@@ -22,7 +22,13 @@ public class BookingWindow extends javax.swing.JFrame {
         lblAmenities.setText(room.getAmenities());
         
         btnConfirmBooking.setEnabled(false);
+        
+        String currentDateTime = java.time.LocalDateTime.now().format(java.time.format.DateTimeFormatter.ofPattern("MM/dd/yyyy HH:mm"));
+        tfCheckInDate.setText(currentDateTime);
+        tfCheckInDate.setForeground(java.awt.Color.GRAY);
     }
+    
+    
      private void saveToLogbook(String action) {
             try {
                 //get the current time and current date and format it
@@ -58,6 +64,8 @@ public class BookingWindow extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        tfCheckInDate = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(230, 237, 255));
@@ -110,12 +118,12 @@ public class BookingWindow extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnDone);
-        btnDone.setBounds(130, 430, 80, 30);
+        btnDone.setBounds(20, 500, 80, 30);
 
         lblCost.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         lblCost.setForeground(new java.awt.Color(102, 0, 255));
         jPanel1.add(lblCost);
-        lblCost.setBounds(120, 500, 100, 20);
+        lblCost.setBounds(190, 500, 140, 30);
 
         btnConfirmBooking.setBackground(new java.awt.Color(102, 0, 255));
         btnConfirmBooking.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -165,6 +173,16 @@ public class BookingWindow extends javax.swing.JFrame {
         jPanel1.add(jLabel5);
         jLabel5.setBounds(10, 190, 90, 16);
 
+        tfCheckInDate.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 0, 255), 2, true));
+        jPanel1.add(tfCheckInDate);
+        tfCheckInDate.setBounds(10, 440, 320, 40);
+
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(102, 0, 255));
+        jLabel3.setText("CHECK IN DATE AND TIME");
+        jPanel1.add(jLabel3);
+        jLabel3.setBounds(10, 420, 150, 16);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -191,9 +209,10 @@ public class BookingWindow extends javax.swing.JFrame {
         Guest guest = HotelData.getLoggedInGuest();
         Room room = HotelData.getCurrentRoom();
         int nights = Integer.parseInt(tfNights.getText());
-        double total = room.calculatePrice(nights);
+        String date = tfCheckInDate.getText();
 
-        Booking newBooking = new Booking(guest, room, nights);
+        Booking newBooking = new Booking(guest, room, nights, date);
+        double total = newBooking.calculatePrice(nights);
         HotelData.setBooking(newBooking);
 
         saveToLogbook(String.format("%s - %s - %d nights - $%.2f", 
@@ -206,14 +225,28 @@ public class BookingWindow extends javax.swing.JFrame {
 
     private void btnDoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDoneActionPerformed
         // TODO add your handling code here:
-        if (tfNights.getText().isEmpty()) 
+        if (tfNights.getText().isEmpty() || tfCheckInDate.getText().isEmpty()) 
         {
-            javax.swing.JOptionPane.showMessageDialog(this, "PLEASE ENTER NUMBER OF NIGHTS.");
+            javax.swing.JOptionPane.showMessageDialog(this, "Please fill in all fields.");
+            return;
+        }
+        
+        try 
+        {
+            java.time.LocalDateTime.parse(tfCheckInDate.getText(), 
+                java.time.format.DateTimeFormatter.ofPattern("MM/dd/yyyy HH:mm"));
+        } 
+        catch (Exception e) 
+        {
+            javax.swing.JOptionPane.showMessageDialog(this, "Invalid format. Please use MM/DD/YYYY HH:MM");
             return;
         }
 
         int nights = Integer.parseInt(tfNights.getText());
-        double total = HotelData.getCurrentRoom().calculatePrice(nights);
+        Room room = HotelData.getCurrentRoom();
+        Guest guest = HotelData.getLoggedInGuest();
+        Booking tempBooking = new Booking(guest, room, nights, tfCheckInDate.getText());
+        double total = tempBooking.calculatePrice(nights);
 
         lblCost.setText("TOTAL: $" + String.format("%.2f", total));
         
@@ -230,6 +263,7 @@ public class BookingWindow extends javax.swing.JFrame {
     private javax.swing.JButton btnDone;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
@@ -239,6 +273,7 @@ public class BookingWindow extends javax.swing.JFrame {
     private javax.swing.JLabel lblNights;
     private javax.swing.JLabel lblPrice;
     private javax.swing.JLabel lblSelectedRoom;
+    private javax.swing.JTextField tfCheckInDate;
     private javax.swing.JTextField tfNights;
     // End of variables declaration//GEN-END:variables
 }

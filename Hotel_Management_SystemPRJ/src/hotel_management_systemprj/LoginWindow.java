@@ -11,30 +11,40 @@ public class LoginWindow extends javax.swing.JFrame {
         initComponents();
     }
     
-    private boolean loginFromFile(String username, String password) {
-        try {
-            BufferedReader reader = new BufferedReader(new FileReader("src\\hotel_management_systemprj\\users.txt"));
-            String line;
-            while ((line = reader.readLine()) != null) {
-                //this line is for debug if it reads the users from the users.txt and prints put in terminal
-                System.out.println("Read line: " + line); 
-                String[] parts = line.split(" - ");
-                System.out.println();
-                if (parts.length >= 4 && parts[2].trim().equals(username) && parts[3].trim().equals(hashPassword(password))) {
-                    reader.close();
-                    String fullName = parts[0].trim();
-                    String phoneNumber = parts[1].trim();
-                    Guest guest = new Guest(fullName, phoneNumber, username, password);
-                    HotelData.setLoggedInGuest(guest);
-                    return true;
+        private boolean loginFromFile(String username, String password) {
+            try {
+                java.io.BufferedReader reader = new java.io.BufferedReader(new java.io.FileReader("src\\hotel_management_systemprj\\users.txt"));
+                String line;
+                while ((line = reader.readLine()) != null) {
+                    String[] parts = line.split(" - ");
+                    if (parts.length >= 4 && parts[2].trim().equals(username) && parts[3].trim().equals(hashPassword(password))) {
+                        reader.close();
+
+                        // First check if guest already exists in ArrayList
+                        for (Guest g : HotelData.getAllGuests()) 
+                        {
+                            if (g.getUsername().equalsIgnoreCase(username)) 
+                            {
+                                HotelData.setLoggedInGuest(g);
+                                return true;
+                            }
+                        }
+
+                        // If not found in ArrayList, create new Guest
+                        String fullName = parts[0].trim();
+                        String phoneNumber = parts[1].trim();
+                        Guest guest = new Guest(fullName, phoneNumber, username, password);
+                        HotelData.registerGuest(guest);
+                        HotelData.setLoggedInGuest(guest);
+                        return true;
+                    }
                 }
+                reader.close();
+            } catch (java.io.IOException e) {
+                JOptionPane.showMessageDialog(this, "Error reading user file: " + e.getMessage());
             }
-            reader.close();
-        } catch (IOException e) {
-            JOptionPane.showMessageDialog(this, "Error reading user file: " + e.getMessage());
+            return false;
         }
-        return false;
-    }
     
         private String hashPassword(String password) {
         try {
