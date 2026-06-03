@@ -79,7 +79,7 @@ public class CheckOutWindow extends javax.swing.JFrame {
             }
         });
         jPanel1.add(rbCredit);
-        rbCredit.setBounds(20, 310, 100, 21);
+        rbCredit.setBounds(20, 310, 110, 21);
 
         rbDebit.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         rbDebit.setText("DEBIT CARD");
@@ -89,7 +89,7 @@ public class CheckOutWindow extends javax.swing.JFrame {
             }
         });
         jPanel1.add(rbDebit);
-        rbDebit.setBounds(20, 340, 100, 21);
+        rbDebit.setBounds(20, 340, 110, 21);
 
         rbCash.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         rbCash.setText("CASH");
@@ -99,7 +99,7 @@ public class CheckOutWindow extends javax.swing.JFrame {
             }
         });
         jPanel1.add(rbCash);
-        rbCash.setBounds(20, 370, 100, 21);
+        rbCash.setBounds(20, 370, 110, 21);
 
         lblTotal.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         lblTotal.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);

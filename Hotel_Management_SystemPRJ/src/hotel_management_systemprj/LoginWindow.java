@@ -13,7 +13,7 @@ public class LoginWindow extends javax.swing.JFrame {
     
         private boolean loginFromFile(String username, String password) {
             try {
-                java.io.BufferedReader reader = new java.io.BufferedReader(new java.io.FileReader("src\\hotel_management_systemprj\\users.txt"));
+                BufferedReader reader = new BufferedReader(new FileReader("src\\hotel_management_systemprj\\users.txt"));
                 String line;
                 while ((line = reader.readLine()) != null) {
                     String[] parts = line.split(" - ");
